@@ -1,2 +1,1 @@
-# dive-into-webpack
-深入浅出Webpack
+# 深入浅出Webpack
