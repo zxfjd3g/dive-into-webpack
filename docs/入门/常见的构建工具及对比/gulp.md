@@ -41,3 +41,5 @@ gulp.task('watch', function(){
     gulp.watch('./js/*.js', ['scripts']);    
 });
 ```
+
+Gulp 可以看作是 Grunt 的加强版，相比于 Grunt 增加了监听文件、读写文件、流式处理的功能。
