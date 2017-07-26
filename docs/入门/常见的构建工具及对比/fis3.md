@@ -14,6 +14,11 @@ fis.match('*.{js,css,png}', {
   useHash: true
 });
 
+fis.match('*.ts', {
+  // fis3-parser-typescript 插件把 ts 转换成 js
+  parser: fis.plugin('typescript')
+});
+
 // 对 CSS 进行图片合并
 fis.match('*.css', {
   // 给匹配到的文件分配属性 `useSprite`
@@ -44,4 +49,4 @@ fis.match('*.png', {
 **缺点是：**
 - 目前官方已经不再更新和维护，不支持最新版本的 Nodejs
 
-Fis3 是一个完整的解决方案，如果把 Grunt、Gulp 比喻成汽车的发动机的话，Fis3 可比喻成一辆完成的汽车。
+Fis3 是一个专注于 Web 开发的完整解决方案，如果把 Grunt、Gulp 比喻成汽车的发动机，Fis3 可比喻成一辆完成的汽车。
