@@ -1,3 +1,7 @@
 {
-  "root": "./docs"
+  "root": "./docs",
+  "title": "深入浅出Webpack",
+  "author": "吴浩麟",
+  "isbn": "",
+  "language": "zh"
 }

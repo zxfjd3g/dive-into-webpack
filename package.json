@@ -1,0 +1,12 @@
+{
+  "name": "dive-into-webpack",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "gitbook serve",
+    "pub": "node build.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gh-pages": "^1.0.0"
+  }
+}
