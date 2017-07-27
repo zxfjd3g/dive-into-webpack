@@ -6,6 +6,7 @@
     * [安装与启动](./入门/安装与启动.md)
     * [使用Loader](./入门/使用Loader.md)
     * [使用Plugin](./入门/使用Plugin.md)
+    * [使用DevServer](./入门/使用DevServer.md)
     * [核心概念](./入门/核心概念.md)
     * [配置Webpack]
         
