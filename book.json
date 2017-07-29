@@ -5,11 +5,15 @@
   "isbn": "",
   "language": "zh-hans",
   "plugins": [
-    "github"
+    "github",
+    "disqus"
   ],
   "pluginsConfig": {
     "github": {
       "url": "https://github.com/gwuhaolin/dive-into-webpack"
+    },
+    "disqus": {
+      "shortName": "dive-into-webpack"
     }
   }
 }
