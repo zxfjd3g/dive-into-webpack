@@ -3,5 +3,13 @@
   "title": "深入浅出Webpack",
   "author": "吴浩麟",
   "isbn": "",
-  "language": "zh"
+  "language": "zh-hans",
+  "plugins": [
+    "github"
+  ],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/gwuhaolin/dive-into-webpack"
+    }
+  }
 }
