@@ -1,12 +1,12 @@
 ### 使用 Loader
-在上一节中我们使用 Webpack 构建了一个采用了 CommonJS 规范的模块化项目，本节我们将继续优化这个网页的 UI为项目引入 CSS 文件居中显示文字，`main.css` 内容如下：
+在上一节中使用 Webpack 构建了一个采用了 CommonJS 规范的模块化项目，本节将继续优化这个网页的 UI 为项目引入 CSS 文件居中显示文字，`main.css` 内容如下：
 ```css
 #app{
     text-align: center;
 }
 ```
 
-在 Webpack 里把一切文件看做成模块，CSS 文件也不例外，要引入 `main.css` 我们需要像引入 JS 文件那样，修改入口文件 `main.js` 如下：
+在 Webpack 里把一切文件看做成模块，CSS 文件也不例外，要引入 `main.css` 需要像引入 JS 文件那样，修改入口文件 `main.js` 如下：
 ```js
 // 通过 CommonJS 规范导入 css 模块
 require('./main.css');
@@ -15,7 +15,7 @@ const show = require('./show.js');
 // 执行 show 函数
 show('Webpack');
 ```
-就这样修改后去执行 Webpack 构建是会报错的，因为 Webpack 不原生支持解析 CSS 文件。要支持非 JS 类型的文件我们需要使用 Webpack 的 Loader 机制。Webpack 配置修改使用如下：
+就这样修改后去执行 Webpack 构建是会报错的，因为 Webpack 不原生支持解析 CSS 文件。要支持非 JS 类型的文件需要使用 Webpack 的 Loader 机制。Webpack 配置修改使用如下：
 ```js
 const path = require('path');
 
@@ -41,18 +41,19 @@ module.exports = {
 ```
 Loader 可以看成具有文件转换功能的翻译员，配置里的 `module.rules` 数组配置了一组规则告诉 Webpack 在遇到哪些文件时使用哪些 Loader 去加载和转换。
 如上配置告诉 Webpack 在遇到以 `.css` 结尾的文件时先使用 `css-loader` 去读取 CSS 文件，之后再交给 `style-loader` 去把 CSS 内容注入到 JS 里去。
-在配置 Loader 需要注意的是：
-- `loaders` 属性需要传入一个数组，Loader 的执行顺序是由后到前的
+在配置 Loader 时需要注意的是：
+- `loaders` 属性需要传入一个数组，Loader 的执行顺序是由后到前的。
 - 每一个 Loader 可以通过 URL querystring 的方式传入参数，例如 `css-loader?minimize` 中的 `minimize` 告诉 `css-loader` 要开启 CSS 压缩。
+
 Loader 具体支持哪些属性需要去查阅文档，例如 `css-loader` 还有很多用法你可以在 [css-loader 主页](https://github.com/webpack-contrib/css-loader) 查到。
 
 在重新执行 Webpack 构建前要先安装新引入的 Loader：
 ```bash
 npm i -D style-loader css-loader
 ```
-按照成功后重新执行 Webpack 构建你会发现 `bundle.js` 文件被更新了，里面注入了我们在 `main.css` 写的 CSS，而不是会而外生成一个 CSS 文件。
+按照成功后重新执行 Webpack 构建你会发现 `bundle.js` 文件被更新了，里面注入了在 `main.css` 写的 CSS，而不是会而外生成一个 CSS 文件。
 但是你重新刷新 `index.html` 网页将会发现 `Hello,Webpack` 居中了，样式生效了！
-也许你会对此感到奇怪第一次看到 CSS 被写在了 JS 里，这其实都是 `style-loader` 的功劳，它的工作原理大概是把 CSS 内容用 JS 里的字符串存储起来，在页面 JS 执行后通过 DOM 操作动态的往 `HTML head` 标签里拆入 `HTML style` 标签。
+也许你会对此感到奇怪第一次看到 CSS 被写在了 JS 里，这其实都是 `style-loader` 的功劳，它的工作原理大概是把 CSS 内容用 JS 里的字符串存储起来，在页面 JS 执行后通过 DOM 操作动态地往 `HTML head` 标签里拆入 `HTML style` 标签。
 也许你会认为这样做会导致 JS 文件变大导致加载网页时间变长，想让 Webpack 单独输出 CSS 文件，下一节[使用Plugin](./使用Plugin.md)将教你如何通过 Webpack Plugin 机制来实现。
 
 **本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用Loader)**
