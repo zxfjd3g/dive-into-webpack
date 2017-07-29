@@ -1,14 +1,14 @@
 # 目录
         
-* [入门](./入门/入门.md)
-    * [前端的发展](./入门/前端的发展/前端的发展.md)
+* [入门](入门/入门.md)
+    * [前端的发展](入门/前端的发展/前端的发展.md)
     * [常见的构建工具及对比](入门/常见的构建工具及对比/常见的构建工具及对比.md)
-    * [安装与使用](./入门/安装与使用.md)
-    * [使用Loader](./入门/使用Loader.md)
-    * [使用Plugin](./入门/使用Plugin.md)
-    * [使用DevServer](./入门/使用DevServer.md)
-    * [核心概念](./入门/核心概念.md)
-    * [配置Webpack]
+    * [安装与使用](入门/安装与使用.md)
+    * [使用Loader](入门/使用Loader.md)
+    * [使用Plugin](入门/使用Plugin.md)
+    * [使用DevServer](入门/使用DevServer.md)
+    * [配置Webpack](入门/配置Webpack/配置Webpack.md)
+    * [核心概念](入门/核心概念.md)
         
 * [实战]
     * [使用TypeScript语言]
