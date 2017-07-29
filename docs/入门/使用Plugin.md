@@ -45,4 +45,4 @@ npm i -D extract-text-webpack-plugin
 还有很多配置选项可以在 [ExtractTextPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) 的主页查到。
 
 
-本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用Plugin)
+**本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用Plugin)**

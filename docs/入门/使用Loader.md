@@ -55,4 +55,4 @@ npm i -D style-loader css-loader
 也许你会对此感到奇怪第一次看到 CSS 被写在了 JS 里，这其实都是 `style-loader` 的功劳，它的工作原理大概是把 CSS 内容用 JS 里的字符串存储起来，在页面 JS 执行后通过 DOM 操作动态的往 `HTML head` 标签里拆入 `HTML style` 标签。
 也许你会认为这样做会导致 JS 文件变大导致加载网页时间变长，想让 Webpack 单独输出 CSS 文件，下一节[使用Plugin](./使用Plugin.md)将教你如何通过 Webpack Plugin 机制来实现。
 
-本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用Loader)
+**本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用Loader)**

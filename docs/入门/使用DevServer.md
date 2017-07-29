@@ -45,7 +45,7 @@ DevServer 在收到来自 Webpack 的文件变化通知时通过注入的客户�
 而 `index.html` 文件是脱离了 JavaScript 模块化系统的，所以 Webpack 不知道它的存在。
 
 ##### 模块热替换
-除了通过重新刷新整个网页来实现实时预览外，DevServer 还有一种被称作**模块热替换**的刷新技术。
+除了通过重新刷新整个网页来实现实时预览外，DevServer 还有一种被称作模块热替换的刷新技术。
 模块热替换能做到在不重新加载整个网页的情况下，通过把被更新过的模块替换掉老的后去重新执行一次来实现实时预览。
 模块热替换相比于默认的刷新机制能提供更快的响应和更好的开发体验。
 模块热替换默认是关闭的，要开启模块热替换你只需在启动 DevServer 时带上 `--hot` 参数，重新 DevServer 后你再去更新文件就能体验到模块热替换的神奇了。
@@ -58,4 +58,4 @@ Webpack 支持生成 Source Maps，只需在启动时带上 `--devtool source-ma
 
 ![source-map](img/source-map.png)
 
-本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用DevServer)
+**本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用DevServer)**
