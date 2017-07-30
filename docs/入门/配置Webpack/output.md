@@ -39,7 +39,7 @@ path: path.resolve(__dirname, 'dist_[hash]')
 在复杂的项目里可以会存在一些构建出的资源需要异步地加载，加载这些异步资源需要对应的 URL 地址。
 
 `output.publicPath` 配置发布到线上资源的 URL 前缀，string 类型。
-默认值是空字符串 `""`，即使用相对路径。
+默认值是空字符串 `''`，即使用相对路径。
 
 这样说可能有点抽象，举个例子，把构建出的资源文件上传到 CDN 服务上去后有利于加速页面打开速度。配置代码如下：
 ```js
@@ -48,7 +48,7 @@ publicPath: 'https://cdn.example.com/assets/'
 ```
 这时发布到线上的 HTML 在引入 JS 文件时就需要：
 ```html
-<script src="https://cdn.example.com/assets/a_12345678.js"></script>
+<script src='https://cdn.example.com/assets/a_12345678.js'></script>
 ```
 
 使用该配置项时要小心，一有不慎将导致资源加载404错误。
@@ -63,8 +63,73 @@ publicPath: 'https://cdn.example.com/assets/'
 
 #### library 和 libraryExport
 当你用 Webpack 去构建一个可以被其它模块导入使用的库时，你需要使用该配置选项。
-- `output.library` 配置输出库的名称
-- `output.libraryExport` 配置输出库需要符合哪些模块化规范。
+- `output.library` 配置输出库的名称。
+- `output.libraryExport` 配置输出库需要符合哪些模块化规范，枚举类型。
 
-它们通常搭配在一起使用。
+它们通常搭配在一起使用，`output.libraryExport` 支持如下配置：
 
+##### this
+你编写的库将通过 `this` 被复制给 `library` 定义的名称，输出和使用如下：
+```js
+// Webpack 输出的代码
+this['LibraryName'] = chunk_code;
+
+// 使用库的方法
+this.LibraryName.doSomething();
+```
+
+##### window
+你编写的库将通过 `window` 被复制给 `library` 定义的名称，输出和使用如下：
+```js
+// Webpack 输出的代码
+window['LibraryName'] = chunk_code;
+
+// 使用库的方法
+window.LibraryName.doSomething();
+```
+
+##### global
+你编写的库将通过 `window` 被复制给 `library` 定义的名称，输出和使用如下：
+```js
+// Webpack 输出的代码
+global['LibraryName'] = chunk_code;
+
+// 使用库的方法
+global.LibraryName.doSomething();
+```
+
+##### var
+默认值。
+你编写的库将通过 `var` 被复制给 `library` 定义的名称。
+假如配置了 `output.library:'LibraryName'`，输出和使用如下：
+```js
+// Webpack 输出的代码
+var LibraryName = chunk_code;
+
+// 使用库的方法
+LibraryName.doSomething();
+```
+
+##### commonjs
+你编写的库将通过 Commonjs 规范导出，输出和使用如下：
+```js
+// Webpack 输出的代码
+exports['LibraryName'] = chunk_code;
+
+// 使用库的方法
+require('LibraryName').doSomething();
+```
+
+##### commonjs2
+你编写的库将通过 Commonjs2 规范导出，输出和使用如下：
+```js
+// Webpack 输出的代码
+module.exports = chunk_code;
+
+// 使用库的方法
+require('LibraryName').doSomething();
+```
+Commonjs2 和 Commonjs 规范很相似，差别在于 Commonjs 只能用 `exports` 去导出而 Commonjs2 在 Commonjs 的基础上增加了 `module.exports` 的导出方式。
+
+
+> 以上只是 `output` 里常用的配置项，还有部分几乎用不上的配置项没有一一列举，你可以在 [Webpack 官方文档](https://webpack.js.org/configuration/output/) 上查阅它们。

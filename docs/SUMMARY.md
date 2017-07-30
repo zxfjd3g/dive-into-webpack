@@ -15,9 +15,9 @@
         - [resolve](入门/配置Webpack/resolve.md)
         - [plugins](入门/配置Webpack/plugins.md)
         - [devServer](入门/配置Webpack/devServer.md)
-        - [其它](入门/配置Webpack/其它.md)
+        - [其它配置项](入门/配置Webpack/其它配置项.md)
         - [整体配置结构](入门/配置Webpack/整体配置结构.md)
-        - [总结](入门/配置Webpack/总结.md)
+        - [配置总结](入门/配置Webpack/配置总结.md)
         
 - [实战]
     - [使用 TypeScript 语言]
@@ -47,7 +47,7 @@
     
 - [原理]
     - [Webpack工作原理]
-    - [编写 Webpack loader]
-    - [编写 Webpack plugin]
+    - [编写 Webpack Loader]
+    - [编写 Webpack Plugin]
     - [Webpack 输出文件分析](原理/Webpack输出文件分析.md)    
     
