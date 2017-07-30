@@ -1,0 +1,70 @@
+### Output
+`output` 是配置如何输出最终想要的代码。`output` 是一个 `object`，里面包含一系列配置项，下面来分别介绍它们。
+
+
+#### filename
+`output.filename` 配置输出文件的名称，string 类型。
+如果只有一个输出文件，你可以把它写死：
+```js
+filename: 'bundle.js'
+```
+但是再有多个 Chunk 要输出时，你就要借助模版和变量了。前面说到 Webpack 会为每个 Chunk 取一个名称，可以根据 Chunk 名称来区分输出的文件名：
+```js
+filename: '[name].js'
+```
+代码里的 `[name]` 代表用内置的 `name` 变量去替换掉 `[name]`，这时你可以把它看成一个字符串模块函数，每一个要输出的 Chunk 都会通过这个函数去拼接出输出的文件名称。
+
+内置变量除了 `name` 外还包括：
+
+| 变量名 | 含义 |
+| --- | --- |
+| id | Chunk 的唯一标识，从0开始 |
+| name | Chunk 的名称 |
+| hash | Chunk 的唯一标识的 hash 值 |
+| chunkhash | Chunk 内容 的 hash 值 |
+
+其中 `hash chunkhash` 的长度是可指定的，`[hash:8]` 代表在计算 hash 值时取8位，默认是20位。
+
+> 注意 [ExtractTextWebpackPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) 插件是使用的 `contenthash` 而不是 `chunkhash`，原因在于 ExtractTextWebpackPlugin 提取出来的内容是代码内容本身而不是由一组模块组成的 Chunk。
+
+
+#### path
+`output.path` 配置输出文件存放在本地的目录，必须是 string 类型的绝对路径。通常通过 Nodejs 的 `path` 模块去获取绝对路径：
+```js
+path: path.resolve(__dirname, 'dist_[hash]')
+```
+
+
+#### publicPath
+在复杂的项目里可以会存在一些构建出的资源需要异步地加载，加载这些异步资源需要对应的 URL 地址。
+
+`output.publicPath` 配置发布到线上资源的 URL 前缀，string 类型。
+默认值是空字符串 `""`，即使用相对路径。
+
+这样说可能有点抽象，举个例子，把构建出的资源文件上传到 CDN 服务上去后有利于加速页面打开速度。配置代码如下：
+```js
+filename:'[name]_[chunkhash:8].js'
+publicPath: 'https://cdn.example.com/assets/'
+```
+这时发布到线上的 HTML 在引入 JS 文件时就需要：
+```html
+<script src="https://cdn.example.com/assets/a_12345678.js"></script>
+```
+
+使用该配置项时要小心，一有不慎将导致资源加载404错误。
+
+`output.path` 和 `output.publicPath` 都支持字符串模版，内置变量有：
+
+| 变量名 | 含义 |
+| ---- | ---- |
+| hash | 一次编译操作的 hash 值 |
+
+
+
+#### library 和 libraryExport
+当你用 Webpack 去构建一个可以被其它模块导入使用的库时，你需要使用该配置选项。
+- `output.library` 配置输出库的名称
+- `output.libraryExport` 配置输出库需要符合哪些模块化规范。
+
+它们通常搭配在一起使用。
+

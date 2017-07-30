@@ -1,0 +1,11 @@
+{
+  "name": "hello_world",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^3.4.0"
+  }
+}

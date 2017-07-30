@@ -41,7 +41,7 @@ npm i -D extract-text-webpack-plugin
 
 从以上代码可以看出 Webpack 是通过 `plugins` 属性来配置需要使用的插件列表的，`plugins` 属性是一个数组里面的每一项是插件的一个实例，在实例化一个组件的时候可以通过构造函数传入这个组件支持的配置属性。
 例如 `ExtractTextPlugin` 插件的作用是提取出 JS 代码里的 CSS 到一个单独的文件，
-对此你可以通过插件的 `filename` 属性告诉插件输出的 CSS 文件名称规则是使用 `[name]_[contenthash:8].css` 字符串模版，里面的 `[name]` 代表文件名称 `[contenthash:8]` 代表根据文件内容算出的 hash 值前8位，
+对此你可以通过插件的 `filename` 属性告诉插件输出的 CSS 文件名称规则是使用 `[name]_[contenthash:8].css` 字符串模版，里面的 `[name]` 代表文件名称 `[contenthash:8]` 代表根据文件内容算出的8位的 hash 值，
 还有很多配置选项可以在 [ExtractTextPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) 的主页查到。
 
 
