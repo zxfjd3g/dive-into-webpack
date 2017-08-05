@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+    target: 'async-node',
     // JS 执行入口文件
     entry: ['./main.js', './show.js'],
     output: {
