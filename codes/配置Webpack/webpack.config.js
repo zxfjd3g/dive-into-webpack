@@ -18,5 +18,8 @@ module.exports = {
                 res.json({ custom: 'response' });
             });
         },
+    },
+    externals: {
+        jquery: 'jQuery'
     }
 };

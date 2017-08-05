@@ -4,3 +4,6 @@ const show = require('./show.js');
 show('Webpack');
 
 require('fs');
+
+import $ from 'jquery';
+$('.my-element');
