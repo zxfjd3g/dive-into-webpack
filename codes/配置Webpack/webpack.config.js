@@ -8,8 +8,14 @@ module.exports = {
         filename: '[hash].js',
         // 输出文件都放到 dist 目录下
         path: path.resolve(__dirname, './dist'),
-        library: 'DiveInto',
-        libraryTarget: 'window',
-        pathinfo: true,
+
+    },
+    devServer: {
+        lazy: true,
+        setup(app) {
+            app.get('/some/path', function (req, res) {
+                res.json({ custom: 'response' });
+            });
+        },
     }
 };
