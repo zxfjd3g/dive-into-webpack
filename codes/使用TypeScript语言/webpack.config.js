@@ -1,12 +1,23 @@
 const path = require('path');
 
 module.exports = {
-    // JS 执行入口文件
-    entry: './main.js',
+    // TS 执行入口文件
+    entry: './main',
     output: {
-        // 把所有依赖的模块合并输出到一个 bundle.js 文件
         filename: 'bundle.js',
-        // 输出文件都放到 dist 目录下
         path: path.resolve(__dirname, './dist'),
-    }
+    },
+    resolve: {
+        // 先尝试 ts，tsx 后缀的 TypeScript 源码文件
+        extensions: ['.ts', '.tsx', '.js']
+    },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: 'awesome-typescript-loader'
+            }
+        ]
+    },
+    devtool: 'source-map',// 输出 SourceMap 方便在浏览器里调试 TS 代码
 };
