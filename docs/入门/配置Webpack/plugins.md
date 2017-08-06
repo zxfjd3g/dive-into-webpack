@@ -4,7 +4,6 @@ Plugin 用于扩展 Webpack 功能，各种各样的 Plugin 几乎让 Webpack �
 
 #### 配置 Plugin
 Plugin 的配置很简单，`plugins` 配置项接受一个数组，数组里每一项都是一个要使用的 Plugin 的实例，Plugin 需要的参数通过构造函数传入。
-
 ```js
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 
@@ -18,8 +17,3 @@ module.exports = {
   ]
 };
 ```
-
-#### 内置 Plugin
-除了需要另外安装的 Plugins，Webpack 已经为我们内置了许多常用的 Plugins。它们包括：
-
-@TODO
