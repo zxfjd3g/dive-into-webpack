@@ -1,5 +1,5 @@
 {
-  "name": "hello_world",
+  "name": "hello_webpack",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack-dev-server --hot --devtool source-map"
