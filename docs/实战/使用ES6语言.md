@@ -1,4 +1,4 @@
-### 使用ES6语言
+### 使用 ES6 语言
 ECMAScript 6.0 是2015年发布的下一代 JavaScript 语言标准，它引入了新的语法和 API 来提升开发效率。
 虽然目前部分浏览器和 Nodejs 已经支持 ES6，但由于它们对 ES6 所有的标准支持不全，这会导致在开发中不敢全面的使用 ES6。
 
@@ -115,3 +115,5 @@ module.exports = {
 ```bash
 npm i -D babel-core babel-preset-env babel-loader
 ```
+
+**本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用ES6语言)**
