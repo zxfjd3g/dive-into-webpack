@@ -73,8 +73,9 @@ Presets 其实是一组 Plugins 的集合，每一个 Plugin 完成一个新语�
     - [env](https://babeljs.io/docs/plugins/preset-env/) 包含所有 ECMAScript 标准里新特性
     
     它们之间的关系如图：
-    
-    <img src="img/presets-es.png" width="250px" alt="ECMAScript 标准里的特性关系图"/>
+    <p>
+        <img src="img/presets-es.png" width="500px" alt="ECMAScript 标准里的特性关系图"/>
+    </p>
     
 - 被社区提出来的但还未被写入 ECMAScript 标准里特性，这其中又分为以下四种：
     - [stage0](https://babeljs.io/docs/plugins/preset-stage-0/) 只是一个美好激进的想法，有 Babel 插件实现了对这些特性的支持，但是不确定是否会被定为标准
@@ -84,8 +85,10 @@ Presets 其实是一组 Plugins 的集合，每一个 Plugin 完成一个新语�
     - stage4 在下一年就加入到标准里去
     
     它们之间的关系如图：
+    <p align="center">
+        <img src="img/presets-stage.png" width="300px" alt="stage关系图"/>
+    </p>
     
-    <img src="img/presets-stage.png" width="200px" alt="stage关系图"/>
     
 - 为了支持一些特定的语法，例如 `babel-preset-react` 是为了支持 React 开发里的 JSX 语法。
  
