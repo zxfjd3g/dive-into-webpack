@@ -1,7 +1,6 @@
 # 深入浅出 Webpack
 
 ## 目录
-- [深入浅出 Webpack](docs/README.md)
 - [前言](docs/前言.md)
 - [入门](docs/入门/README.md)
     - [前端的发展](docs/入门/前端的发展.md)
