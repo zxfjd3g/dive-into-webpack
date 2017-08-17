@@ -1,7 +1,6 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-const nunjucks = require('nunjucks');
 const ghpages = require('gh-pages');
 
 // 编译 gitbook
@@ -24,8 +23,7 @@ execSync(`node ./node_modules/gitbook-cli/bin/gitbook.js build`);
             let org = fs.readFileSync(mdPath, {
                 encoding: 'utf8',
             });
-            let tran = nunjucks.configure(path.dirname(mdPath)).renderString(org);
-            str += tran + '\n';
+            str += org + '\n';
         }
     });
     fs.writeFileSync('./_book/dive_into_webpack.md', str);
