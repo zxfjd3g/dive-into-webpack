@@ -73,7 +73,7 @@ Presets 其实是一组 Plugins 的集合，每一个 Plugin 完成一个新语�
     - [env](https://babeljs.io/docs/plugins/preset-env/) 包含所有 ECMAScript 标准里新特性
     
     它们之间的关系如图：
-    <p>
+    <p align="center">
         <img src="img/presets-es.png" width="500px" alt="ECMAScript 标准里的特性关系图"/>
     </p>
     

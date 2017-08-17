@@ -56,6 +56,8 @@ DevServer 在收到来自 Webpack 的文件变化通知时通过注入的客户�
 Webpack 支持生成 Source Maps，只需在启动时带上 `--devtool source-map` 参数即可。
 加上参数重启上面的 DevServer 后刷新页面，再打开 Chrome 浏览器的开发者工具，就可在 Sources 栏中看到可调试的源代码了。
 
-![source-map](img/source-map.png)
+<p align="center">
+    <img src="img/source-map.png" alt="source-map" width="600px"/>
+</p>
 
 **本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用DevServer)**
