@@ -113,7 +113,10 @@ module.exports = {
 配置命中了 `src` 目录下所有的 JS 文件，通过 `babel-loader` 去调用 Babel 完成转换工作。
 在重新执行构建前，需要先安装新引入的依赖：
 ```bash
-npm i -D babel-core babel-preset-env babel-loader
+# Webpack 接入 Babel 并且依赖的模块
+npm i -D babel-core babel-loader 
+# 根据你的需求选择不同的 Plugins 或 Presets
+npm i -D babel-preset-env
 ```
 
 **本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用ES6语言)**
