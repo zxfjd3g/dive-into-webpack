@@ -8,5 +8,14 @@ module.exports = {
         filename: 'bundle.js',
         // 输出文件都放到 dist 目录下
         path: path.resolve(__dirname, './dist'),
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                use: ['babel-loader'],
+                include: path.resolve(__dirname, 'src'),
+            },
+        ]
     }
 };
