@@ -58,6 +58,8 @@ render(<Button/>, window.document.getElementById('app'));
 
 **本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用React框架Babel)**
 
+-----
+
 #### React 与 TypeScript
 TypeScript 相比于 Babel 的优点在于它原生支持 JSX 语法，你不需要重新安装新的依赖，只需修改一行配置。
 TypeScript 的不同在于：
