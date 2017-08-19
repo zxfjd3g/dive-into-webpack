@@ -107,7 +107,8 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
       },
     ]
-  }
+  },
+  devtool: 'source-map' // 输出 source-map 方便直接调试 ES6 源码
 };
 ```
 配置命中了 `src` 目录下所有的 JS 文件，通过 `babel-loader` 去调用 Babel 完成转换工作。
