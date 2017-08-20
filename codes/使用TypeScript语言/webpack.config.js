@@ -9,12 +9,12 @@ module.exports = {
     },
     resolve: {
         // 先尝试 ts，tsx 后缀的 TypeScript 源码文件
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.ts', '.js']
     },
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 loader: 'awesome-typescript-loader'
             }
         ]

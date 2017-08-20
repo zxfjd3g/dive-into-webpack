@@ -41,7 +41,7 @@ TypeScript 官方提供了能把 TypeScript 转换成 JavaScript 的编译器。
 #### 集成 Webpack
 要让 Webpack 支持 TypeScript，需要解决以下2个问题：
 1. 通过 Loader 把 TypeScript 转换成 JavaScript。
-2. Webpack 在寻找模块对应的文件时需要尝试 `ts | tsx` 后缀，其中 `tsx` 后缀用于采用了 JSX 语法的项目。
+2. Webpack 在寻找模块对应的文件时需要尝试 `ts` 后缀。
 
 对于问题1，社区已经出现了几个可用的 Loader，推荐使用速度更快的 [awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript-loader)。
 对于问题2，根据前面讲过的 [extensions](../配置/resolve.md#extensions) 我们需要修改默认的 `resolve.extensions` 配置项。
@@ -58,13 +58,13 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
     },
     resolve: {
-        // 先尝试 ts，tsx 后缀的 TypeScript 源码文件 
-        extensions: ['.ts', '.tsx', '.js',...[]] 
+        // 先尝试 ts 后缀的 TypeScript 源码文件
+        extensions: ['.ts', '.js',...[]] 
     },
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 loader: 'awesome-typescript-loader'
             }
         ]

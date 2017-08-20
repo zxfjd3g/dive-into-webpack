@@ -77,7 +77,7 @@ TypeScript 的不同在于：
 }
 ```
 由于 `main.js` 文件中存在 JSX 语法，再把 `main.js` 文件重命名为 `main.jsx`，同时修改文件内容为在上面 *React 与 Babel* 里所采用的 React 代码。
-同时为了让 Webpack 对项目里的 ts 与 tsx 原文件都采用 `awesome-typescript-loader` 去转换，需要注意的是 Webpack Loader 配置的 `test` 选项需要匹配到 tsx 类型的文件，配置如下：
+同时为了让 Webpack 对项目里的 ts 与 tsx 原文件都采用 `awesome-typescript-loader` 去转换，需要注意的是 Webpack Loader 配置的 `test` 选项需要匹配到 tsx 类型的文件，并且 `extensions` 中也要加上 `.tsx`，配置如下：
 ```js
 const path = require('path');
 
