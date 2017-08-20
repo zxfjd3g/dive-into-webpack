@@ -26,7 +26,7 @@
     - [使用 React 框架](实战/使用React框架.md)
     - [使用 Vue 框架](实战/使用Vue框架.md)
     - [使用 Angular2 框架](实战/使用Angular2框架.md)
-    - [为单页应用生成 HTML]
+    - [为单页应用生成 HTML](实战/为单页应用生成HTML.md)
     - [管理多个单页应用]
     - [构建同构应用]
     - [构建 ReactNative 应用]

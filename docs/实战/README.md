@@ -12,7 +12,7 @@
      - [使用 Vue 框架](使用Vue框架.md)
      - [使用 Angular2 框架](使用Angular2框架.md)
 - 用 Webpack 构建单页应用：
-     - [为单页应用生成 HTML]
+     - [为单页应用生成 HTML](为单页应用生成HTML.md)
      - [管理多个单页应用]
 - 用 Webpack 构建不同运行环境的项目：
      - [构建同构应用]
