@@ -10,7 +10,7 @@
 - 使用新框架来开发项目：
      - [使用 React 框架](使用React框架.md)
      - [使用 Vue 框架](使用Vue框架.md)
-     - [使用 Angular2 框架]
+     - [使用 Angular2 框架](使用Angular2框架.md)
 - 用 Webpack 构建单页应用：
      - [为单页应用生成 HTML]
      - [管理多个单页应用]

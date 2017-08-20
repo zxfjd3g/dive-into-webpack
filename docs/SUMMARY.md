@@ -25,7 +25,7 @@
     - [使用 Flow 检查器](实战/使用Flow检查器.md)
     - [使用 React 框架](实战/使用React框架.md)
     - [使用 Vue 框架](实战/使用Vue框架.md)
-    - [使用 Angular2 框架]
+    - [使用 Angular2 框架](实战/使用Angular2框架.md)
     - [为单页应用生成 HTML]
     - [管理多个单页应用]
     - [构建同构应用]
