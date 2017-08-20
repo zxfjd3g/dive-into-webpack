@@ -1,10 +1,10 @@
 ### devServer
-前面介绍过用来提高开发效率的[ DevServer](../使用DevServer.md) ，它提供了一些配置项可以改变 DevServer 的默认行为。
+前面介绍过用来提高开发效率的[ DevServer](../入门/使用DevServer.md) ，它提供了一些配置项可以改变 DevServer 的默认行为。
 要配置 DevServer ，除了在配置文件里通过 `devServer` 传入参数外，还可以通过命令行参数传入。
 注意只有在通过 DevServer 去启动 Webpack 时配置文件里 `devServer` 才会生效，因为这些参数所对应的功能都是 DevServer 提供的，Webpack 本身并不认识 `devServer`。
 
 #### hot
-`devServer.hot` 配置是否启用前面介绍过的[模块热替换功能](../使用DevServer.md#模块热替换)。
+`devServer.hot` 配置是否启用前面介绍过的[模块热替换功能](../入门/使用DevServer.md#模块热替换)。
 DevServer 默认的行为是在发现源代码被更新后会通过自动刷新整个页面来做到实时预览，开启模块热替换功能后将在不刷新整个页面的情况下通过用新模块替换老模块来做到实时预览。
 
 

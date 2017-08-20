@@ -1,8 +1,6 @@
 # 目录
 - [深入浅出 Webpack](README.md)
-
 - [前言](前言.md)
-
 - [入门](入门/README.md)
     - [前端的发展](入门/前端的发展.md)
     - [常见的构建工具及对比](入门/常见的构建工具及对比.md)
@@ -11,17 +9,16 @@
     - [使用 Plugin](入门/使用Plugin.md)
     - [使用 DevServer](入门/使用DevServer.md)
     - [核心概念](入门/核心概念.md)
-    - [配置 Webpack](入门/配置Webpack/README.md)
-        - [entry](入门/配置Webpack/entry.md) 
-        - [output](入门/配置Webpack/output.md)
-        - [module](入门/配置Webpack/module.md)
-        - [resolve](入门/配置Webpack/resolve.md)
-        - [plugins](入门/配置Webpack/plugins.md)
-        - [devServer](入门/配置Webpack/devServer.md)
-        - [其它配置项](入门/配置Webpack/其它配置项.md)
-        - [整体配置结构](入门/配置Webpack/整体配置结构.md)
-        - [配置总结](入门/配置Webpack/配置总结.md)
-        
+- [配置](配置/README.md)
+    - [entry](配置/entry.md) 
+    - [output](配置/output.md)
+    - [module](配置/module.md)
+    - [resolve](配置/resolve.md)
+    - [plugins](配置/plugins.md)
+    - [devServer](配置/devServer.md)
+    - [其它配置项](配置/其它配置项.md)
+    - [整体配置结构](配置/整体配置结构.md)
+    - [配置总结](配置/配置总结.md)
 - [实战](实战/README.md)
     - [使用 ES6 语言](实战/使用ES6语言.md)
     - [使用 TypeScript 语言](实战/使用TypeScript语言.md)
@@ -40,7 +37,6 @@
     - [搭配 Npm Script]
     - [搭配 Gulp]
     - [搭配 Grunt]
-    
 - [优化]
     - [优化开发体验]
         - [优化构建速度]
@@ -51,7 +47,6 @@
         - [分割代码优化网页首屏时间]
         - [提升代码运行效率]
     - [分析优化点]    
-    
 - [原理]
     - [Webpack工作原理]
     - [编写 Webpack Loader]

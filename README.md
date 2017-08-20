@@ -10,20 +10,20 @@
     - [使用 Plugin](docs/入门/使用Plugin.md)
     - [使用 DevServer](docs/入门/使用DevServer.md)
     - [核心概念](docs/入门/核心概念.md)
-    - [配置 Webpack](docs/入门/配置Webpack/README.md)
-        - [entry](docs/入门/配置Webpack/entry.md) 
-        - [output](docs/入门/配置Webpack/output.md)
-        - [module](docs/入门/配置Webpack/module.md)
-        - [resolve](docs/入门/配置Webpack/resolve.md)
-        - [plugins](docs/入门/配置Webpack/plugins.md)
-        - [devServer](docs/入门/配置Webpack/devServer.md)
-        - [其它配置项](docs/入门/配置Webpack/其它配置项.md)
-        - [整体配置结构](docs/入门/配置Webpack/整体配置结构.md)
-        - [配置总结](docs/入门/配置Webpack/配置总结.md)
+- [配置](docs/配置/README.md)
+    - [entry](docs/配置/entry.md) 
+    - [output](docs/配置/output.md)
+    - [module](docs/配置/module.md)
+    - [resolve](docs/配置/resolve.md)
+    - [plugins](docs/配置/plugins.md)
+    - [devServer](docs/配置/devServer.md)
+    - [其它配置项](docs/配置/其它配置项.md)
+    - [整体配置结构](docs/配置/整体配置结构.md)
+    - [配置总结](docs/配置/配置总结.md)
 - [实战](docs/实战/README.md)
     - [使用 ES6 语言](docs/实战/使用ES6语言.md)
     - [使用 TypeScript 语言](docs/实战/使用TypeScript语言.md)
-    - [使用 Flow 语言](docs/实战/使用Flow检查器.md)
+    - [使用 Flow 检查器](docs/实战/使用Flow检查器.md)
     - [使用 React 框架](docs/实战/使用React框架.md)
     - [使用 Vue 框架](docs/实战/使用Vue框架.md)
     - [使用 Angular2 框架]
@@ -53,7 +53,6 @@
     - [编写 Webpack Loader]
     - [编写 Webpack Plugin]
     - [Webpack 输出文件分析](docs/原理/Webpack输出文件分析.md)    
-    
     
 ## 版权许可
 - 本书采用“保持署名—非商用”创意共享4.0许可证。		
