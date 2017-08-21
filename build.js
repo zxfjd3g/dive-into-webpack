@@ -11,22 +11,23 @@ execSync(`node ./node_modules/gitbook-cli/bin/gitbook.js build`);
 
 // 合并 markdown 为一个文件
 (() => {
-  const indexPath = path.resolve(__dirname, './docs/SUMMARY.md');
-  let str = fs.readFileSync(indexPath, {
+  const entryPath = path.resolve(__dirname, 'docs/README.md');
+  let str = fs.readFileSync(entryPath, {
     encoding: 'utf8',
-  });
+  }) + '\n';
   let finds = str.match(/\(.+\.md\)/g);
   finds.forEach(mdPath => {
     mdPath = mdPath.substring(1, mdPath.length - 1);
-    mdPath = path.resolve(path.dirname(indexPath), mdPath);
+    mdPath = path.resolve(path.dirname(entryPath), mdPath);
     if (fs.existsSync(mdPath)) {
-      let org = fs.readFileSync(mdPath, {
+      let content = fs.readFileSync(mdPath, {
         encoding: 'utf8',
       });
-      str += org + '\n';
+      str += content + '\n';
     }
   });
-  fs.writeFileSync('./_book/dive_into_webpack.md', str);
+  fs.writeFileSync('_book/dive_into_webpack.md', str);
+  execSync('pandoc -o _book/dive_into_webpack.docx -f markdown -t docx _book/dive_into_webpack.md');
 })();
 
 // 发布到 gh-pages

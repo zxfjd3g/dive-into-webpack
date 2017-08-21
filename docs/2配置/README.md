@@ -13,12 +13,12 @@
 3. 两种方式都可以配置的选项。
 
 按照配置**所影响的功能**来划分，可分为：
-- [entry](entry.md) 配置模块的入口
-- [output](output.md) 配置如何输出最终想要的代码
-- [module](module.md) 配置模块相关
-- [resolve](resolve.md) 配置寻找模块的规则
-- [plugins](plugins.md) 配置扩展插件
-- [devServer](devServer.md) 配置 DevServer
-- [其它配置项](其它配置项.md) 其它零散的配置项
-- [整体配置结构](整体配置结构.md) 整体地描述各配置项的结构
-- [配置总结](配置总结.md) 寻找配置 Webpack 的规律，减少思维负担
+- [2.1 Entry](2.1Entry.md) 配置模块的入口
+- [2.2 Output](2.2Output.md) 配置如何输出最终想要的代码
+- [2.3 Module](2.3Module.md) 配置模块相关
+- [2.4 Resolve](2.4Resolve.md) 配置寻找模块的规则
+- [2.5 Plugins](2.5Plugins.md) 配置扩展插件
+- [2.6 DevServer](2.6DevServer.md) 配置 DevServer
+- [2.7 其它配置项](2.7其它配置项.md) 其它零散的配置项
+- [2.8 整体配置结构](2.8整体配置结构.md) 整体地描述各配置项的结构
+- [2.9 配置总结](2.9配置总结.md) 寻找配置 Webpack 的规律，减少思维负担
