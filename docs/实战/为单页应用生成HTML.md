@@ -128,10 +128,32 @@ module.exports = {
 - 给输出的文件名称加上 hash 值
 - 压缩输出的 JS 代码
 
-最核心的部分在于 `plugins` 里的：
+但最核心的部分在于 `plugins` 里的：
 ```js
 new WebPlugin({
   template: './index.html', // HTML 模版文件所在的文件路径
   filename: 'index.html' // 输出的 HTML 的文件名称
 })
 ```
+其中 `template: './index.html'` 所指的模版的文件 `index.html` 内容是：
+```html
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!--注入 Chunk app 中的 CSS-->
+  <link rel="stylesheet" href="app?_inline">
+  <!--注入 google_analytics 中的 JS 代码-->
+  <script src="./google_analytics.js?_inline"></script>
+  <!--异步加载 Disqus 评论-->
+  <script src="https://dive-into-webpack.disqus.com/embed.js" async></script>
+</head>
+<body>
+<h1 id="app"></h1>
+<!--导入 Chunk app 中的 JS-->
+<script src="app"></script>
+<!--Disqus 评论容器-->
+<div id="disqus_thread"></div>
+</body>
+</html>
+```
+该文件描述了哪些资源需要被以何种方式加入到输出的 HTML 文件中。
