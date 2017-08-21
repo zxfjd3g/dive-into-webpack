@@ -15,7 +15,7 @@ module.exports = {
             {
                 // 用正则去匹配要用该 loader 转换的 css 文件
                 test: /\.css$/,
-                loaders: ExtractTextPlugin.extract({
+                use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: ['css-loader'],
                 }),
