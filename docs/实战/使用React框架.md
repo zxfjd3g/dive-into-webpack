@@ -5,7 +5,7 @@
 ```jsx
 class Button extends Component {
     render() {
-        return <button>Hello,Webpack</button>
+        return <h1>Hello,Webpack</h1>
     }
 }
 ```
@@ -14,10 +14,10 @@ class Button extends Component {
 其中 JSX 语法是无法在任何现有的 JavaScript 引擎中运行的，所以在构建过程中需要把源码转换成可以运行的代码，例如：
 ```jsx
 // 原 JSX 语法代码
-return <button>Hello,Webpack</button>
+return <h1>Hello,Webpack</h1>
 
 // 被转换成正常的 JavaScript 代码
-return React.createElement('button', null, 'Hello,Webpack')
+return React.createElement('h1', null, 'Hello,Webpack')
 ```
 
 目前 Babel 和 TypeScript 都提供了对 React 语法的支持，下面分别来介绍如何在使用 Babel 或 TypeScript 的项目中接入 React 框架。
@@ -48,7 +48,7 @@ import { render } from 'react-dom';
 
 class Button extends Component {
     render() {
-        return <button>Hello,Webpack</button>
+        return <h1>Hello,Webpack</h1>
     }
 }
 
