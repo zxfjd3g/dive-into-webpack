@@ -22,7 +22,7 @@ webpack output is served from /
 ```html
 <html>
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 </head>
 <body>
 <h1 id="app"></h1>
@@ -57,7 +57,7 @@ Webpack 支持生成 Source Maps，只需在启动时带上 `--devtool source-ma
 加上参数重启上面的 DevServer 后刷新页面，再打开 Chrome 浏览器的开发者工具，就可在 Sources 栏中看到可调试的源代码了。
 
 <p align="center">
-    <img src="img/source-map.png" alt="source-map" width="600px"/>
+  <img src="img/source-map.png" alt="source-map" width="600px"/>
 </p>
 
 **本实例[完整代码下载](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用DevServer)**

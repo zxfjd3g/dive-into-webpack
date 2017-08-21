@@ -4,9 +4,9 @@
 使用了 React 项目的代码特征是有 JSX 和 Class 语法，例如：
 ```jsx
 class Button extends Component {
-    render() {
-        return <h1>Hello,Webpack</h1>
-    }
+  render() {
+    return <h1>Hello,Webpack</h1>
+  }
 }
 ```
 > 在使用了 React 的项目里 JSX 和 Class 语法并不是必须的，但使用新语法写出的代码看上去更优雅
@@ -47,9 +47,9 @@ import { Component } from 'react';
 import { render } from 'react-dom';
 
 class Button extends Component {
-    render() {
-        return <h1>Hello,Webpack</h1>
-    }
+  render() {
+    return <h1>Hello,Webpack</h1>
+  }
 }
 
 render(<Button/>, window.document.getElementById('app'));
@@ -82,25 +82,25 @@ TypeScript 的不同在于：
 const path = require('path');
 
 module.exports = {
-    // TS 执行入口文件
-    entry: './main',
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, './dist'),
-    },
-    resolve: {
-        // 先尝试 ts，tsx 后缀的 TypeScript 源码文件 
-        extensions: ['.ts', '.tsx', '.js',...[]] 
-    },
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader'
-            }
-        ]
-    },
-    devtool: 'source-map',// 输出 SourceMap 方便在浏览器里调试 TypeScript 代码
+  // TS 执行入口文件
+  entry: './main',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, './dist'),
+  },
+  resolve: {
+    // 先尝试 ts，tsx 后缀的 TypeScript 源码文件 
+    extensions: ['.ts', '.tsx', '.js',...[]] 
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
+      }
+    ]
+  },
+  devtool: 'source-map',// 输出 SourceMap 方便在浏览器里调试 TypeScript 代码
 };
 ```
 通过

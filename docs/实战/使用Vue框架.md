@@ -11,25 +11,25 @@ Vue 和 React 一样，它们都推崇组件化和由数据驱动视图的思想
 ```html
 <!--渲染模版-->
 <template>
-    <h1>{{ msg }}</h1>
+  <h1>{{ msg }}</h1>
 </template>
 
 <!--样式描述-->
 <style scoped>
-    h1 {
-        color: red;
-    }
+  h1 {
+    color: red;
+  }
 </style>
 
 <!--组件逻辑-->
 <script>
-    export default {
-        data() {
-            return {
-                msg: 'Hello,Webpack'
-            }
-        }
+  export default {
+    data() {
+      return {
+        msg: 'Hello,Webpack'
+      }
     }
+  }
 </script>
 ```
 Vue 的单文件组件通过一个类似 HTML 文件的 `.vue` 文件就能描述清楚一个组件所需的模版、样式、逻辑。
@@ -40,8 +40,8 @@ import Vue from 'vue'
 import App from './App.vue'
 
 new Vue({
-    el: '#app',
-    render: h => h(App)
+  el: '#app',
+  render: h => h(App)
 });
 ```
 入口文件创建一个 Vue 的根实例，在 ID 为 `app` 的 DOM 节点上渲染出上面定义的 `App` 组件。
@@ -53,12 +53,12 @@ new Vue({
 修改 Webpack 配置文件如下：
 ```js
 module: {
-    rules: [
-        {
-            test: /\.vue$/,
-            use: ['vue-loader'],
-        },
-    ]
+  rules: [
+    {
+      test: /\.vue$/,
+      use: ['vue-loader'],
+    },
+  ]
 }
 ```
 安装新引入的依赖：

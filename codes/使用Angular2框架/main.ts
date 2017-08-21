@@ -10,12 +10,12 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {AppComponent} from './app.component';
 
 @NgModule({
-    // 该 NgModule 所依赖的视图组件
-    declarations: [AppComponent],
-    // 该 NgModule 所依赖的其它 NgModule
-    imports: [BrowserModule],
-    // 应用的根视图组件，只有根 NgModule 需要设置
-    bootstrap: [AppComponent]
+  // 该 NgModule 所依赖的视图组件
+  declarations: [AppComponent],
+  // 该 NgModule 所依赖的其它 NgModule
+  imports: [BrowserModule],
+  // 应用的根视图组件，只有根 NgModule 需要设置
+  bootstrap: [AppComponent]
 })
 class AppModule {
 }

@@ -7,9 +7,9 @@ Webpack 内置 JavaScript 模块化语法解析功能，默认会采用模块化
 ```js
 // webpack alias 配置
 resolve:{
-    alias:{
-        components: './src/components/'
-    }
+  alias:{
+    components: './src/components/'
+  }
 }
 ```
 当你通过 `import Button from 'components/button'` 导入时，实际上被 `alias` 等价替换成了 `import Button from './src/components/button'`。
@@ -18,9 +18,9 @@ resolve:{
 这样做可能会命中太多的导入语句，alias 还支持 `$` 符号来缩小范围到只命中以关键字结尾的导入语句：
 ```js
 resolve:{
-    alias:{
-        'react$': '/path/to/react.min.js'
-    }
+  alias:{
+    'react$': '/path/to/react.min.js'
+  }
 }
 ```
 `react$` 只会命中以 `react` 结尾的导入语句，把 `react` 关键字替换成 `/path/to/react.min.js`。

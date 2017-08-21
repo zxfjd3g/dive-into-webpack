@@ -66,28 +66,28 @@ var _extent = require('babel-runtime/helpers/_extent');
 `presets` 属性告诉 Babel 要转换的源码使用了哪些新的语法特性，一个 Presets 对一组新语法特性提供支持，多个 Presets 可以叠加。
 Presets 其实是一组 Plugins 的集合，每一个 Plugin 完成一个新语法的转换工作。Presets 是按照 ECMAScript 草案来组织的，通常可以分为以下三类：
 - 已经被写入 ECMAScript 标准里的特性，由于每年都有特性被加入到标准里，这其中又分为：
-    - [es2015](https://babeljs.io/docs/plugins/preset-es2015/) 包含在2015里加入的新特性
-    - [es2016](https://babeljs.io/docs/plugins/preset-es2016/) 包含在2016里加入的新特性
-    - [es2017](https://babeljs.io/docs/plugins/preset-es2017/) 包含在2017里加入的新特性
-    - [es2017](https://babeljs.io/docs/plugins/preset-es2017/) 包含在2017里加入的新特性
-    - [env](https://babeljs.io/docs/plugins/preset-env/) 包含所有 ECMAScript 标准里新特性
-    
-    它们之间的关系如图：
-    <p align="center">
-        <img src="img/presets-es.png" width="500px" alt="ECMAScript 标准里的特性关系图"/>
-    </p>
+  - [es2015](https://babeljs.io/docs/plugins/preset-es2015/) 包含在2015里加入的新特性
+  - [es2016](https://babeljs.io/docs/plugins/preset-es2016/) 包含在2016里加入的新特性
+  - [es2017](https://babeljs.io/docs/plugins/preset-es2017/) 包含在2017里加入的新特性
+  - [es2017](https://babeljs.io/docs/plugins/preset-es2017/) 包含在2017里加入的新特性
+  - [env](https://babeljs.io/docs/plugins/preset-env/) 包含所有 ECMAScript 标准里新特性
+  
+  它们之间的关系如图：
+  <p align="center">
+    <img src="img/presets-es.png" width="500px" alt="ECMAScript 标准里的特性关系图"/>
+  </p>
     
 - 被社区提出来的但还未被写入 ECMAScript 标准里特性，这其中又分为以下四种：
-    - [stage0](https://babeljs.io/docs/plugins/preset-stage-0/) 只是一个美好激进的想法，有 Babel 插件实现了对这些特性的支持，但是不确定是否会被定为标准
-    - [stage1](https://babeljs.io/docs/plugins/preset-stage-1/) 值得被纳入标准的特性
-    - [stage2](https://babeljs.io/docs/plugins/preset-stage-2/) 该特性规范已经被起草，将会被纳入标准里
-    - [stage3](https://babeljs.io/docs/plugins/preset-stage-3/) 该特性规范已经定稿，各大浏览器厂商和 Nodejs 社区开始着手实现
-    - stage4 在下一年就加入到标准里去
-    
-    它们之间的关系如图：
-    <p align="center">
-        <img src="img/presets-stage.png" width="300px" alt="stage关系图"/>
-    </p>
+  - [stage0](https://babeljs.io/docs/plugins/preset-stage-0/) 只是一个美好激进的想法，有 Babel 插件实现了对这些特性的支持，但是不确定是否会被定为标准
+  - [stage1](https://babeljs.io/docs/plugins/preset-stage-1/) 值得被纳入标准的特性
+  - [stage2](https://babeljs.io/docs/plugins/preset-stage-2/) 该特性规范已经被起草，将会被纳入标准里
+  - [stage3](https://babeljs.io/docs/plugins/preset-stage-3/) 该特性规范已经定稿，各大浏览器厂商和 Nodejs 社区开始着手实现
+  - stage4 在下一年就加入到标准里去
+  
+  它们之间的关系如图：
+  <p align="center">
+    <img src="img/presets-stage.png" width="300px" alt="stage关系图"/>
+  </p>
     
     
 - 为了支持一些特定的语法，例如 `babel-preset-react` 是为了支持 React 开发里的 JSX 语法。

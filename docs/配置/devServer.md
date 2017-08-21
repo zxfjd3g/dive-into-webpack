@@ -34,10 +34,10 @@ historyApiFallback: true
 ```js
 historyApiFallback: {
   rewrites: [
-    // 使用正则匹配命中路由
-    { from: /^\/user/, to: '/user.html' },
-    { from: /^\/game/, to: '/game.html' },
-    { from: /./, to: '/index.html' },
+  // 使用正则匹配命中路由
+  { from: /^\/user/, to: '/user.html' },
+  { from: /^\/game/, to: '/game.html' },
+  { from: /./, to: '/index.html' },
   ]
 }
 ```
@@ -48,7 +48,7 @@ historyApiFallback: {
 例如你想把项目根目录下的 `public` 目录设置成 DevServer 服务器的文件根目录，你可以这样：
 ```js
 devServer:{
-    contentBase: path.join(__dirname, 'public')
+  contentBase: path.join(__dirname, 'public')
 }
 ```
 
@@ -63,9 +63,9 @@ devServer:{
 `devServer.compress` 配置项可以在 HTTP 响应中注入一些 HTTP 响应头，使用如下：
 ```js
 devServer:{
-    headers: {
-        'X-foo':'bar'
-    }
+  headers: {
+    'X-foo':'bar'
+  }
 }
 ```
 
@@ -83,11 +83,11 @@ devServer:{
 `devServer.allowedHosts` 配置一个白名单列表，只有 HTTP 请求的 HOST 在列表里才正常返回，使用如下：
 ```js
 allowedHosts: [
-    // 匹配单个域名
-    'host.com',
-    'sub.host.com',
-    // host2.com 和所有的子域名 *.host2.com 都将匹配
-    '.host2.com'
+  // 匹配单个域名
+  'host.com',
+  'sub.host.com',
+  // host2.com 和所有的子域名 *.host2.com 都将匹配
+  '.host2.com'
 ]
 ```
 
@@ -103,7 +103,7 @@ DevServer 默认使用 HTTP 协议服务，它也能通过 HTTPS 服务。
 要切换成 HTTPS 服务，最简单的方式是：
 ```js
 devServer:{
-    https: true
+  https: true
 }
 ```
 DevServer 会生成一份 HTTPS 证书。
@@ -111,11 +111,11 @@ DevServer 会生成一份 HTTPS 证书。
 如果你想用自己的证书可以这样配置：
 ```js
 devServer:{
-    https: {
-      key: fs.readFileSync('path/to/server.key'),
-      cert: fs.readFileSync('path/to/server.crt'),
-      ca: fs.readFileSync('path/to/ca.pem')
-    }
+  https: {
+    key: fs.readFileSync('path/to/server.key'),
+    cert: fs.readFileSync('path/to/server.crt'),
+    ca: fs.readFileSync('path/to/ca.pem')
+  }
 }
 ```
 

@@ -6,4 +6,5 @@ show('Webpack');
 require('fs');
 
 import $ from 'jquery';
+
 $('.my-element');

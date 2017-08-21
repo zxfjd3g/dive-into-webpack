@@ -7,7 +7,7 @@
 Webpack 在寻找相对路径的文件时会根据它的 `context` 为根目录去寻找，`context` 默认为执行启动 webpack 时所在的当前工作目录。如果你想改变 `context` 的默认配置，你在配置文件里可以这样设置它：
 ```js
 module.exports = {
-    context: path.resolve(__dirname, 'app')
+  context: path.resolve(__dirname, 'app')
 }
 ```
 注意 `context` 必须是一个绝对路径的字符串。
@@ -36,18 +36,18 @@ Webpack 会为每个生成的 Chunk 取一个名称，Chunk 的名称和 Entry �
 ```js
 // 同步函数
 entry: () => {
-    return {
-        a:'./pages/a',
-        b:'./pages/b',
-    }
+  return {
+    a:'./pages/a',
+    b:'./pages/b',
+  }
 };
 // 异步函数
 entry: () => {
-    return new Promise((resolve)=>{
-        resolve({
-             a:'./pages/a',
-             b:'./pages/b',
-        });
+  return new Promise((resolve)=>{
+    resolve({
+       a:'./pages/a',
+       b:'./pages/b',
     });
+  });
 };
 ```

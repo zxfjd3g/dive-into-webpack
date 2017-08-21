@@ -71,8 +71,8 @@ function foo(one, two, three) {}
 2. 修改 `.babelrc` 配置文件，加入 Flow Preset：
 ```js
 "presets": [
-    ...[],
-    "flow"
+  ...[],
+  "flow"
 ]
 ```
 往源码里加入静态类型后重新构建项目，你会发现新的 Flow 还是能正常在浏览器中运行。

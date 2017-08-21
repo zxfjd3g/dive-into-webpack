@@ -12,7 +12,7 @@
 // 操作 DOM 元素，把 content 显示到网页上
 // 通过 ES6 模块规范导出 show 函数
 export function show(content: string) {
-    window.document.getElementById('app').innerText = 'Hello,' + content;
+  window.document.getElementById('app').innerText = 'Hello,' + content;
 }
 // main.ts
 // 通过 ES6 模块规范导入 show 函数
@@ -51,25 +51,25 @@ TypeScript 官方提供了能把 TypeScript 转换成 JavaScript 的编译器。
 const path = require('path');
 
 module.exports = {
-    // TS 执行入口文件
-    entry: './main',
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, './dist'),
-    },
-    resolve: {
-        // 先尝试 ts 后缀的 TypeScript 源码文件
-        extensions: ['.ts', '.js',...[]] 
-    },
-    module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                loader: 'awesome-typescript-loader'
-            }
-        ]
-    },
-    devtool: 'source-map',// 输出 SourceMap 方便在浏览器里调试 TypeScript 代码
+  // TS 执行入口文件
+  entry: './main',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, './dist'),
+  },
+  resolve: {
+    // 先尝试 ts 后缀的 TypeScript 源码文件
+    extensions: ['.ts', '.js',...[]] 
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader'
+      }
+    ]
+  },
+  devtool: 'source-map',// 输出 SourceMap 方便在浏览器里调试 TypeScript 代码
 };
 ```
 

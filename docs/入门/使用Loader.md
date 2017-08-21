@@ -2,7 +2,7 @@
 在上一节中使用 Webpack 构建了一个采用了 CommonJS 规范的模块化项目，本节将继续优化这个网页的 UI 为项目引入 CSS 文件居中显示文字，`main.css` 内容如下：
 ```css
 #app{
-    text-align: center;
+  text-align: center;
 }
 ```
 
@@ -20,23 +20,23 @@ show('Webpack');
 const path = require('path');
 
 module.exports = {
-    // JS 执行入口文件
-    entry: './main.js',
-    output: {
-        // 把所有依赖的模块合并输出到一个 bundle.js 文件
-        filename: 'bundle.js',
-        // 输出文件都放到 dist 目录下
-        path: path.resolve(__dirname, './dist'),
-    },
-    module: {
-        rules: [
-            {
-                // 用正则去匹配要用该 loader 转换的 css 文件
-                test: /\.css$/,
-                loaders: ['style-loader', 'css-loader?minimize'],
-            }
-        ]
-    }
+  // JS 执行入口文件
+  entry: './main.js',
+  output: {
+    // 把所有依赖的模块合并输出到一个 bundle.js 文件
+    filename: 'bundle.js',
+    // 输出文件都放到 dist 目录下
+    path: path.resolve(__dirname, './dist'),
+  },
+  module: {
+    rules: [
+      {
+        // 用正则去匹配要用该 loader 转换的 css 文件
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader?minimize'],
+      }
+    ]
+  }
 };
 ```
 Loader 可以看成具有文件转换功能的翻译员，配置里的 `module.rules` 数组配置了一组规则告诉 Webpack 在遇到哪些文件时使用哪些 Loader 去加载和转换。

@@ -41,31 +41,31 @@ module: {
 在 Loader 需要传入很多参数时，你还可以通过一个 Object 来描述，就上面的 babel-loader 代码如下：
 ```js
 use: [
-    {
-        loader:'babel-loader',
-        options:{
-            cacheDirectory:true,
-        }
-    },
-    ...[]
+  {
+    loader:'babel-loader',
+    options:{
+      cacheDirectory:true,
+    }
+  },
+  ...[]
 ]
 ```
 
 上面的例子中 `test include exclude` 这三个命中文件的配置项只传入了一个字符串或正则，其实它们还都支持数组类型，使用如下：
 ```js
 {
-    test:[
-        /\.jsx?$/,
-        /\.tsx?$/
-    ],
-    include:[
-        path.resolve(__dirname, 'src'),
-        path.resolve(__dirname, 'tests'),
-    ],
-    exclude:[
-        path.resolve(__dirname, 'node_modules'),
-        path.resolve(__dirname, 'bower_modules'),
-    ]
+  test:[
+    /\.jsx?$/,
+    /\.tsx?$/
+  ],
+  include:[
+    path.resolve(__dirname, 'src'),
+    path.resolve(__dirname, 'tests'),
+  ],
+  exclude:[
+    path.resolve(__dirname, 'node_modules'),
+    path.resolve(__dirname, 'bower_modules'),
+  ]
 }
 ```
 数组里的每项之间是**或**的关系，即符合数组中的任何一个就会被命中。
@@ -100,15 +100,15 @@ module: {
       test: /\.js$/,
       use: ['babel-loader'],
       parser: {
-        amd: false, // 禁用 AMD
-        commonjs: false, // 禁用 CommonJS
-        system: false, // 禁用 SystemJS
-        harmony: false, // 禁用 ES6 import/export
-        requireInclude: false, // 禁用 require.include
-        requireEnsure: false, // 禁用 require.ensure
-        requireContext: false, // 禁用 require.context
-        browserify: false, // 禁用 browserify
-        requireJs: false, // 禁用 requirejs
+      amd: false, // 禁用 AMD
+      commonjs: false, // 禁用 CommonJS
+      system: false, // 禁用 SystemJS
+      harmony: false, // 禁用 ES6 import/export
+      requireInclude: false, // 禁用 require.include
+      requireEnsure: false, // 禁用 require.ensure
+      requireContext: false, // 禁用 require.context
+      browserify: false, // 禁用 browserify
+      requireJs: false, // 禁用 requirejs
       }
     },
   ]
