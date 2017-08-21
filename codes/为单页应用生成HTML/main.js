@@ -4,7 +4,7 @@ import './main.css';
 
 class Button extends Component {
     render() {
-        return <button>Hello,Webpack</button>
+        return <h1>Hello,Webpack</h1>
     }
 }
 
