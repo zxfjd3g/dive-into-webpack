@@ -6,6 +6,7 @@
   "isbn": "",
   "language": "zh-hans",
   "plugins": [
+    "pandoc",
     "github",
     "edit-link",
     "disqus"

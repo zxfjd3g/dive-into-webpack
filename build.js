@@ -23,27 +23,36 @@ console.log('打包代码 zip');
 
 // 合并 markdown 为一个文件
 const entryPath = path.resolve(__dirname, 'docs/README.md');
+const entryDir = path.dirname(entryPath);
 let str = fs.readFileSync(entryPath, {
   encoding: 'utf8',
-}) + '\n';
-let innerMdLinks = str.match(/\(.+\.md\)/g);
-innerMdLinks.forEach(mdPath => {
-  mdPath = mdPath.substring(1, mdPath.length - 1);
-  mdPath = path.resolve(path.dirname(entryPath), mdPath);
+});
+let oneMd = str + '\n';
+str.replace(/\[.+]\((.+\.md)\)/g, (_, mdPath) => {
+  mdPath = path.resolve(entryDir, mdPath);
   if (fs.existsSync(mdPath)) {
+    let mdDir = path.dirname(mdPath);
     let content = fs.readFileSync(mdPath, {
       encoding: 'utf8',
     });
     // 提取出外链
-    content = content.replace(/\[(.+)]\((https?:\/\/.+)\)/, '$1($2)');
-    str += content + '\n';
+    content = content.replace(/\[(.+)]\((https?:\/\/.+)\)/g, '$1($2)');
+    // 修正内链
+    content = content.replace(/\[(.+)]\(((?!https?:\/\/).+)\)/g, (match, p1, p2) => {
+      p2 = path.resolve(mdDir, p2);
+      if (p2.match(/.+.md.*/)) {
+        return p1;
+      }
+      return `[${p1}](${p2})`;
+    });
+    oneMd += content + '\n';
   }
 });
-fs.writeFileSync(`_book/${name}.md`, str);
+fs.writeFileSync(`_book/${name}.md`, oneMd);
 console.log('生成完整 markdown');
 
 // 生成 docx
-execSync(`pandoc -o _book/${name}.docx -f markdown -t docx _book/${name}.md`);
+execSync(`pandoc --standalone --data-dir docs --output _book/${name}.docx --from markdown --to docx _book/${name}.md`);
 console.log('生成完整 docx');
 
 /********************************* 发布到 gh-pages ***********************************/
