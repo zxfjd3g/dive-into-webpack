@@ -33,7 +33,7 @@ module.exports = {
   plugins: [
     // 使用本文的主角 WebPlugin，一个 WebPlugin 对应一个 HTML 文件
     new WebPlugin({
-      template: './index.html', // HTML 模版文件所在的文件路径
+      template: './template.html', // HTML 模版文件所在的文件路径
       filename: 'index.html' // 输出的 HTML 的文件名称
     }),
     new ExtractTextPlugin({
