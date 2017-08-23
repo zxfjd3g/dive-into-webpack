@@ -1,5 +1,9 @@
 # 深入浅出 Webpack
 
+### [目录](docs/README.md)
+
+### [电子书](http://webpack.wuhaolin.cn)
+
 ### 版权许可
 **电子工业出版社**持有本书全媒体形式在中国出版发行的专有权利。
 
