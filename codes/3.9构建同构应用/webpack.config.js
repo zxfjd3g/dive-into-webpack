@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   // JS 执行入口文件
-  entry: './main.js',
+  entry: './browser.js',
   output: {
     // 把所有依赖的模块合并输出到一个 bundle.js 文件
     filename: 'bundle.js',
@@ -14,8 +14,11 @@ module.exports = {
       {
         test: /\.js$/,
         use: ['babel-loader'],
-        // 排除 node_modules 目录下的文件，node_modules 目录下的文件都是采用的 ES5 语法，没必要再通过 Babel 去转换
         exclude: path.resolve(__dirname, 'node_modules'),
+      },
+      {
+        test: /\.css/,
+        use: ['style-loader', 'css-loader'],
       },
     ]
   },
