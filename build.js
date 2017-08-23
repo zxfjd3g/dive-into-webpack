@@ -56,6 +56,7 @@ execSync(`pandoc --standalone --data-dir docs --output _book/${name}.docx --from
 console.log('生成完整 docx');
 
 /********************************* 发布到 gh-pages ***********************************/
+fs.writeFileSync(path.resolve('_book', 'CNAME'), 'webpack.wuhaolin.cn');
 ghpages.publish('_book', function (err) {
   if (err) {
     console.error('发布到 gh-pages 失败，错误：', err);
