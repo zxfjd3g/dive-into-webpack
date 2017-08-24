@@ -1,11 +1,7 @@
-# 深入浅出 Webpack
+# 《深入浅出 Webpack》 [电子书](http://webpack.wuhaolin.cn)
 全面的介绍 Webpack，包含 Webpack 的入门、配置、实战、优化、原理。
 
 (本书正在书写中，还未完成...)
-
-### [目录](docs/README.md)
-
-### [电子书](http://webpack.wuhaolin.cn)
 
 ### 版权许可
 **电子工业出版社**持有本书全媒体形式在中国出版发行的专有权利。
