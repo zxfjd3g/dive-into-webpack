@@ -36,6 +36,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
+      // 输出的 CSS 文件名称
       filename: 'index.css',
     }),
   ],
