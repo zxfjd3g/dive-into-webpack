@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build:browser": "webpack",
-    "build:server": "webpack --config webpack.server.config.js",
+    "build:server": "webpack --config webpack_server.config.js",
     "http_server": "node ./http_server.js"
   },
   "dependencies": {
