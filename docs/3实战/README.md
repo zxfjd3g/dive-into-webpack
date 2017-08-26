@@ -24,8 +24,8 @@
 
   - [构建同构应用](3.9构建同构应用.md)
   - [构建 Electron 应用](3.10构建Electron应用.md)
+  - [构建 Npm 模块](3.11构建Npm模块.md)
   - [构建 PWA 应用]
-  - [构建 Npm 库]
   
 - Webpack 结合其它工具搭配使用，各取所长：
   - [搭配 Npm Script]

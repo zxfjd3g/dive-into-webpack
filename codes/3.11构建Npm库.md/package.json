@@ -1,0 +1,37 @@
+{
+  "name": "hello-webpack",
+  "version": "0.0.3",
+  "description": "build npm package user webpack demo for dive-into-webpack book",
+  "keywords": [
+    "webpack",
+    "npm",
+    "package"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/3.11构建Npm库"
+  },
+  "author": "halwu",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "build": "webpack",
+    "pub": "npm publish"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "react": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.5",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5"
+  }
+}
