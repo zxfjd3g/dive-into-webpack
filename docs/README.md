@@ -37,8 +37,7 @@
 - [3.10 构建 Electron 应用](3实战/3.10构建Electron应用.md)
 - [3.11 构建 Npm 模块](3实战/3.11构建Npm模块.md)
 - [3.12 构建离线应用](3实战/3.12构建离线应用.md)
-- [3.13 构建 PWA 应用]
-- [3.15 搭配 Npm Script]
+- [3.13 搭配 Npm Script](3实战/3.13搭配NpmScript.md)
 - [3.16 搭配 Gulp]
 - [3.17 搭配 Grunt]
 
