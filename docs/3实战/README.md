@@ -29,10 +29,6 @@
   - [3.11 构建 Npm 模块](3.11构建Npm模块.md)
   - [3.12 构建离线应用](3.12构建离线应用.md)
   - [构建 React Native 应用]
-  - [构建 Weex 应用]
-  - [构建微信小程序]
-  - [构建使用 WebAssembly 的应用]
-  - [构建使用 HTTP2 Server Push 的应用]
   
 - Webpack 结合其它工具搭配使用，各取所长：
   - [搭配 Npm Script](3.13搭配NpmScript.md)
