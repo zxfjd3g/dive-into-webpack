@@ -46,7 +46,7 @@
 
 
 #### [第4章 优化](4优化/README.md)
-- [搜索路径]
+- [缩小文件搜索范围](4优化/缩小文件搜索范围.md)
 - [DllPlugin]
 - [HappyPack]
 - [webpack-parallel-uglify-plugin]
