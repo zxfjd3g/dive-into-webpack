@@ -1,7 +1,3 @@
----
-description: This is a short description of my page
----
-
 # 入门
 本章带你入门当下最流行的前端构建工具 [Webpack](https://webpack.js.org)。
 
