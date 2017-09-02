@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   // JS 执行入口文件
-  entry: './main.js',
+  entry: './src/main.js',
   output: {
     // 把所有依赖的模块合并输出到一个 bundle.js 文件
     filename: 'bundle.js',
@@ -27,10 +27,12 @@ module.exports = {
     noParse: [/react\.min\.js$/],
     rules: [
       {
+        // 如果项目源码中只有 js 文件就不要写成 /\.jsx?$/，提升正则表达式性能
         test: /\.js$/,
-        use: ['babel-loader'],
-        // 排除 node_modules 目录下的文件，node_modules 目录下的文件都是采用的 ES5 语法，没必要再通过 Babel 去转换
-        exclude: path.resolve(__dirname, 'node_modules'),
+        // babel-loader 支持缓存转换出的结果，通过 cacheDirectory 选项开启
+        use: ['babel-loader?cacheDirectory'],
+        // 只对项目根目录下的 src 目录中的文件采用 babel-loader
+        include: path.resolve(__dirname, 'src'),
       },
     ]
   },
