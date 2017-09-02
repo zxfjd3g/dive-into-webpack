@@ -213,7 +213,7 @@ module.exports = {
 执行构建时流程如下：
 
 1. 如果动态链接库相关的文件还没有编译出来，就需要先把它们编译出来。方法是执行 `webpack --config webpack_dll.config.js` 命令。
-2. 在确保动态链接库存在时，才能正常的编译出入口执行文件。方法是执行 `webpack` 命令。
+2. 在确保动态链接库存在时，才能正常的编译出入口执行文件。方法是执行 `webpack` 命令。这时你会发现构建速度有了非常大的提升。
 
 > 本实例[提供项目完整代码](https://github.com/gwuhaolin/dive-into-webpack/tree/master/codes/使用DllPlugin)
 
