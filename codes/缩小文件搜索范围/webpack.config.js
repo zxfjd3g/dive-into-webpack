@@ -23,7 +23,7 @@ module.exports = {
     extensions: ['js'],
   },
   module: {
-    // 独完整的 `react.min.js` 文件就没有采用模块化，忽略对 `react.min.js` 文件的递归解析和处理
+    // 独完整的 `react.min.js` 文件就没有采用模块化，忽略对 `react.min.js` 文件的递归解析处理
     noParse: [/react\.min\.js$/],
     rules: [
       {
