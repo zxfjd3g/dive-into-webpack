@@ -2,7 +2,6 @@ const path = require('path');
 const DllReferencePlugin = require('webpack/lib/DllReferencePlugin');
 
 module.exports = {
-  // JS 执行入口文件
   entry: {
     // 定义 入口 Chunk
     main: './main.js'
