@@ -205,6 +205,8 @@ module.exports = {
 > 而在 `webpack.config.js` 文件中 DllReferencePlugin 会去 manifest.json 文件读取 name 字段的值，
 > 把值的内容作为在从全局变量中获取动态链接库中内容时的全局变量名。
 
+
+##### 执行构建
 在修改好以上两个 Webpack 配置文件后，需要重新执行构建。
 重新执行构建时需要注意的是需要先把动态链接库相关的文件编译出来，因为主 Webpack 配置文件中定义的 DllReferencePlugin 依赖这些文件。
 
