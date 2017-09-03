@@ -54,9 +54,11 @@
   - [提升代码运行效率]
   - [分析优化点]
   
-- [第5章 原理]
+- [第5章 原理](5原理/README.md)
 
-  - [Webpack工作原理]
+  - [Webpack 工作原理概括]
+  - [Webpack 生命周期](5原理/Webpack生命周期.md)
+  - [Webpack 输出文件分析](5原理/Webpack输出文件分析.md)
   - [编写 Webpack Loader]
   - [编写 Webpack Plugin]
-  - [Webpack 输出文件分析](5原理/Webpack输出文件分析.md)
+  - [调试 Webpack]
