@@ -6,10 +6,10 @@
 优化开发体验的目的是为了提升开发时的效率，其中又可以分为以下几点：
 
 1. **优化构建速度**。在项目庞大时构建耗时可能会变的很长，每次等待构建的耗时加起来也会是个大数目。
-  - [缩小文件搜索范围](缩小文件搜索范围.md)
-  - [使用 DllPlugin](使用DllPlugin.md)
-  - [使用 HappyPack](使用HappyPack.md)
-  - [使用 ParallelUglifyPlugin](使用ParallelUglifyPlugin.md)
+  - [缩小文件搜索范围](4.1缩小文件搜索范围.md)
+  - [使用 DllPlugin](4.2使用DllPlugin.md)
+  - [使用 HappyPack](4.3使用HappyPack.md)
+  - [使用 ParallelUglifyPlugin](4.4使用ParallelUglifyPlugin.md)
   
 2. **优化使用体验**。通过自动化手段完成一些重复的工作，让我们专注于解决问题本身。
   - [自动刷新与模块热替换]
