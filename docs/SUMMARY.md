@@ -48,7 +48,6 @@
   - [使用 DllPlugin](4优化/使用DllPlugin.md)
   - [使用 HappyPack](4优化/使用HappyPack.md)
   - [使用 ParallelUglifyPlugin](4优化/使用ParallelUglifyPlugin.md)
-  - [分析构建耗时](4优化/分析构建耗时.md)
   - [自动刷新与模块热替换]
   - [压缩代码减少文件加载]
   - [图片压缩与合并]

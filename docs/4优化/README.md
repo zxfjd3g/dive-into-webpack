@@ -10,7 +10,6 @@
   - [使用 DllPlugin](使用DllPlugin.md)
   - [使用 HappyPack](使用HappyPack.md)
   - [使用 ParallelUglifyPlugin](使用ParallelUglifyPlugin.md)
-  - [分析构建耗时](分析构建耗时.md)
   
 2. **优化使用体验**。通过自动化手段完成一些重复的工作，让我们专注于解决问题本身。
   - [自动刷新与模块热替换]
