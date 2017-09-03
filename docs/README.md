@@ -72,4 +72,5 @@
 - [Webpack 输出文件分析](5原理/Webpack输出文件分析.md)
 - [编写 Webpack Loader]
 - [编写 Webpack Plugin]
+- [Webpack API 解析](5原理/WebpackAPI解析.md)
 - [调试 Webpack]
