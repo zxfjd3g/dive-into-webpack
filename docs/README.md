@@ -49,7 +49,7 @@
 - [缩小文件搜索范围](4优化/缩小文件搜索范围.md)
 - [使用 DllPlugin](4优化/使用DllPlugin.md)
 - [使用 HappyPack](4优化/使用HappyPack.md)
-- [webpack-parallel-uglify-plugin]
+- [使用 ParallelUglifyPlugin](4优化/使用ParallelUglifyPlugin.md)
 - [alise]
 - [noParse]
 - [自动刷新与模块热替换]

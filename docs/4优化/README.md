@@ -9,7 +9,7 @@
   - [缩小文件搜索范围](缩小文件搜索范围.md)
   - [使用 DllPlugin](使用DllPlugin.md)
   - [使用 HappyPack](使用HappyPack.md)
-  - [使用 webpack-parallel-uglify-plugin]
+  - [使用 ParallelUglifyPlugin](使用ParallelUglifyPlugin.md)
   - [构建耗时分析]
   
 2. **优化使用体验**。通过自动化手段完成一些重复的工作，让我们专注于解决问题本身。
