@@ -44,16 +44,21 @@
 
 - [第4章 优化](4优化/README.md)
 
-  - [优化构建速度](4优化/4.1缩小文件搜索范围.md)
-  - [使用 DllPlugin](4优化/4.2使用DllPlugin.md)
-  - [使用 HappyPack](4优化/4.3使用HappyPack.md)
-  - [使用 ParallelUglifyPlugin](4优化/4.4使用ParallelUglifyPlugin.md)
+  - [4.1 缩小文件搜索范围](4优化/4.1缩小文件搜索范围.md)
+  - [4.2 使用 DllPlugin](4优化/4.2使用DllPlugin.md)
+  - [4.3 使用 HappyPack](4优化/4.3使用HappyPack.md)
+  - [4.4 使用 ParallelUglifyPlugin](4优化/4.4使用ParallelUglifyPlugin.md)
   - [自动刷新与模块热替换]
-  - [压缩代码减少文件加载]
+  - [区分开发及生产环境]
+  - [压缩代码减少网络加载]
+  - [Tree-Sharking 去除无效代码]
+  - [提取公共依赖模块]
+  - [webpack3 Scope Hoisting]
+  - [利用缓存减少重复网络加载]
   - [图片压缩与合并]
-  - [分割代码优化网页首屏时间]
-  - [提升代码运行效率]
-  - [分析优化点]
+  - [分割代码按需加载 Magic Comments]
+  - [提升代码运行时性能]
+  - [输出分析]
   
 - [第5章 原理](5原理/README.md)
 
