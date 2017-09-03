@@ -48,7 +48,7 @@
 #### [第4章 优化](4优化/README.md)
 - [缩小文件搜索范围](4优化/缩小文件搜索范围.md)
 - [使用 DllPlugin](4优化/使用DllPlugin.md)
-- [HappyPack]
+- [HappyPack](4优化/使用HappyPack.md)
 - [webpack-parallel-uglify-plugin]
 - [alise]
 - [noParse]
