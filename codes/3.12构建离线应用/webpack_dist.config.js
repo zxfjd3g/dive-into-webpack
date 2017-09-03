@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     filename: '[name]_[chunkhash:8].js',// 给输出的文件名称加上 hash 值
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -19,7 +19,6 @@ module.exports = {
         test: /\.css/,// 增加对 CSS 文件的支持
         // 提取出 Chunk 中的 CSS 代码到单独的文件中
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
           use: ['css-loader?minimize'] // 压缩 CSS 代码
         }),
       },

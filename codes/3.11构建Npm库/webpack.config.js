@@ -29,7 +29,6 @@ module.exports = {
         test: /\.css/,
         // 提取出 Chunk 中的 CSS 代码到单独的文件中
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
           use: ['css-loader']
         }),
       },
