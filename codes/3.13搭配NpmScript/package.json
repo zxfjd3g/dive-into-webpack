@@ -1,5 +1,5 @@
 {
-  "name": "hello_webpack",
+  "name": "dive-into-webpack",
   "version": "1.0.0",
   "scripts": {
     "dev": "webpack-dev-server --open",
