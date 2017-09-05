@@ -19,6 +19,9 @@ fs.readdirSync(codesDir).forEach(fileName => {
   console.log(`zip ${fileName} 项目代码`);
 });
 
+// 自定义域名
+fs.writeFileSync(path.resolve('_book', 'CNAME'), 'webpack.wuhaolin.cn');
+
 /********************************* 纸质读者 ***********************************/
 
 // 合并 markdown 为一个文件
@@ -56,8 +59,6 @@ execSync(`pandoc --standalone --data-dir docs --output _book/${name}.docx --from
 console.log('生成完整 docx');
 
 /********************************* 发布到 gh-pages ***********************************/
-// 自定义域名
-fs.writeFileSync(path.resolve('_book', 'CNAME'), 'webpack.wuhaolin.cn');
 // ghpages.publish('_book', function (err) {
 //   if (err) {
 //     console.error('发布到 gh-pages 失败，错误：', err);
