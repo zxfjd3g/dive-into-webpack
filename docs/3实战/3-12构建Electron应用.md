@@ -133,7 +133,7 @@ npm i -D electron
 
 ![Electron 应用运行效果图](img/electron-app.png)
 
-> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3.10构建Electron应用.zip)
+> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3-12构建Electron应用.zip)
 
 
 

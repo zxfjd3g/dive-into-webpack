@@ -81,5 +81,5 @@ npm i -D postcss-loader css-loader style-loader
 npm i -D postcss-cssnext
 ```
 
-> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3.5使用PostCSS.zip)
+> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3-5使用PostCSS.zip)
 

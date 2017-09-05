@@ -81,4 +81,4 @@ npm i -D typescript awesome-typescript-loader
 安装成功后重新执行构建，你将会在 `dist` 目录看到输出的 JavaScript 文件 `bundle.js` 和对应的 SourceMap 文件 `bundle.js.map`。
 在浏览器里打开 `index.html` 页面后，来开发工具里可以看到和调试用 TypeScript 编写的源码。
 
-> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3.2使用TypeScript语言.zip)
+> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3-2使用TypeScript语言.zip)

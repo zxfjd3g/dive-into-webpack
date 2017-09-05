@@ -76,5 +76,5 @@ npm i -D vue-loader css-loader vue-template-compiler
 
 重新启动构建你就能看到由 Vue 渲染出的红色的 `Hello,Webpack` 了。
 
-> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3.5使用Vue框架.zip)
+> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3-7使用Vue框架.zip)
 

@@ -113,4 +113,4 @@ npm i -S @angular/platform-browser-dynamic @angular/compiler
 ```
 其它配置保持和在[(3.2 使用 TypeScript 语言](3-2使用TypeScript语言.md)的一样，安装好前面提到的 Angular2 框架依赖的模块后，重新执行构建打开网页，你会看到由 Angular2 渲染出来的 `Hello,Webpack`。
 
-> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3.6使用Angular2框架.zip)
+> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3-8使用Angular2框架.zip)

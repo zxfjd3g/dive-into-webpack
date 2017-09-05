@@ -46,4 +46,4 @@ npm i -D extract-text-webpack-plugin
 还有很多配置选项可以在 [ExtractTextPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) 的主页查到。
 
 
-> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/1.5使用Plugin.zip)
+> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/1-5使用Plugin.zip)

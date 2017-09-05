@@ -62,5 +62,5 @@ npm i -D  sass-loader css-loader style-loader
 npm i -D node-sass
 ```
 
-> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3.4使用SCSS语言.zip)
+> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3-4使用SCSS语言.zip)
 

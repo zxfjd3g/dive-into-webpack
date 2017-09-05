@@ -56,7 +56,7 @@ render(<Button/>, window.document.getElementById('app'));
 ```
 重新执行构建打开网页你将会发现由 React 渲染出来的 `Hello,Webpack`。
 
-> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3.4使用React框架Babel.zip)
+> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3-6使用React框架Babel.zip)
 
 -----
 
@@ -110,4 +110,4 @@ npm i react react-dom @types/react @types/react-dom
 ```
 安装新的依赖后重启构建，重新打开网页你将会发现由 React 渲染出来的 `Hello,Webpack`。
 
-> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3.4使用React框架TypeScript.zip)
+> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3-6使用React框架TypeScript.zip)

@@ -59,4 +59,4 @@ Webpack 支持生成 Source Map，只需在启动时带上 `--devtool source-map
 
 ![图1.6.1 在开发者工具中调试 Source Map](img/source-map.png)
 
-> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/1.6使用DevServer.zip)
+> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/1-6使用DevServer.zip)
