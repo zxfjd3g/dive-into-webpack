@@ -1,3 +1,5 @@
+[![Build Status](https://img.shields.io/travis/gwuhaolin/dive-into-webpack.svg?style=flat-square)](https://travis-ci.org/gwuhaolin/dive-into-webpack)
+
 # [在线阅读](http://webpack.wuhaolin.cn)《深入浅出 Webpack》
 本书按照 入门、配置、实战、优化、原理 的路线层层深入，涵盖了 Webpack 的方方面面。
 对于小白本书可以作为 Webpack 入门教程，对于老手本书可以进一步加深你对 Webpack 的理解。

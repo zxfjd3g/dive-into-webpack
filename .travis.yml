@@ -5,15 +5,11 @@ addons:
   apt_packages:
     - pandoc
 install:
-#    - "npm i"
     - "npm install -g gitbook-cli"
     - "gitbook install"
 script:
-    - "npm run pub"
+    - "node build.js"
 deploy:
   provider: pages
   local_dir: _book
-#  skip_cleanup: true
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-#  on:
-#    branch: master

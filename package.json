@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "gitbook": "^3.2.3",
   "scripts": {
-    "dev": "gitbook serve",
-    "pub": "node build.js"
-  },
-  "devDependencies": {
+    "build": "gitbook build"
   }
 }
