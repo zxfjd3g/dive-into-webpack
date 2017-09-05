@@ -9,15 +9,15 @@ const { name } = require('./package.json');
 
 // 生成网页
 execSync(`node ./node_modules/gitbook-cli/bin/gitbook.js build`);
+console.log('生成网页静态文件成功');
 
-// 生成电子书
-// execSync(`node ./node_modules/gitbook-cli/bin/gitbook.js pdf ./ _book/${name}.pdf`); // 生产 pdf
-// execSync(`node ./node_modules/gitbook-cli/bin/gitbook.js epub ./ _book/${name}.epub`); // 生产 epub
-// execSync(`node ./node_modules/gitbook-cli/bin/gitbook.js mobi ./ _book/${name}.mobi`); // 生产 mobi
-
-// 打包代码 zip
-execSync(`git archive --format=zip HEAD:codes -o _book/${name}.zip`);
-console.log('打包代码 zip');
+// zip所有项目代码
+const codesDir = 'codes';
+// zip单个项目代码
+fs.readdirSync(codesDir).forEach(fileName => {
+  execSync(`git archive --format=zip HEAD:${path.join(codesDir, fileName)} -o _book/${fileName}.zip`);
+  console.log(`zip ${fileName} 项目代码`);
+});
 
 /********************************* 纸质读者 ***********************************/
 
