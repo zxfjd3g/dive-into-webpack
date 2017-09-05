@@ -1,14 +1,11 @@
 language: node_js
 node_js:
   - "node"
-cache:
-  directories:
-    - "node_modules"
 addons:
   apt_packages:
     - pandoc
 install:
-    - "npm i"
+#    - "npm i"
     - "npm install -g gitbook-cli"
     - "gitbook install"
 script:
