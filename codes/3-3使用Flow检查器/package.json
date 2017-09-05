@@ -1,0 +1,17 @@
+{
+  "name": "dive-into-webpack",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack",
+    "flow": "flow"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.53.1",
+    "webpack": "^3.4.0"
+  }
+}

@@ -1,0 +1,12 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<div id="app"></div>
+<!--导入 webpack 输出的 JS 文件-->
+<script src="bundle.js"></script>
+<!--注入 DevServer 提供的代理客户端脚本，这个服务是 DevServer 内置的-->
+<script src="http://localhost:8080/webpack-dev-server.js"></script>
+</body>
+</html>

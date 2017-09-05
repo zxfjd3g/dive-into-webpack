@@ -1,0 +1,17 @@
+{
+  "presets": [
+    "env",
+    "react"
+  ],
+  "plugins": [
+    [
+      "transform-runtime",
+      {
+        // transform-runtime 默认会自动的为你使用的 ES6 API 注入 polyfill
+        // 假如你在源码中使用了 Promise，输出的代码将会自动注入 require('babel-runtime/core-js/Promise') 语句
+        // polyfill 的注入应该交给模块使用者，因为使用者可能在其它地方已经注入的其它的 Promise polyfill，所以关闭该功能。
+        "polyfill": false
+      }
+    ]
+  ]
+}

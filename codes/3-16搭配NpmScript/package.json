@@ -1,0 +1,25 @@
+{
+  "name": "dive-into-webpack",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack-dev-server --open",
+    "dist": "NODE_ENV=production webpack --config webpack_dist.config.js",
+    "pub": "npm run dist && rsync dist"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.5",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "style-loader": "^0.18.2",
+    "web-webpack-plugin": "^1.10.0",
+    "webpack": "^3.4.0",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
