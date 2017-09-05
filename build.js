@@ -49,7 +49,7 @@ str.replace(/\[.+]\((.+\.md)\)/g, (_, mdPath) => {
   }
 });
 fs.writeFileSync(`_book/${name}.md`, oneMd);
-console.log('生成完整 markdown');
+console.log('拼接完整 markdown');
 
 // 生成 docx
 execSync(`pandoc --standalone --data-dir docs --output _book/${name}.docx --from markdown --to docx _book/${name}.md`);

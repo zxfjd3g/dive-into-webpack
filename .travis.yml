@@ -1,0 +1,14 @@
+language: node_js
+addons:
+  apt_packages:
+    - pandoc
+before_install:
+    - "npm install -g gitbook-cli"
+script:
+    - "npm run pub"
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
