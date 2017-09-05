@@ -20,6 +20,12 @@
     "edit-link": {
       "base": "https://github.com/gwuhaolin/dive-into-webpack/tree/master/docs",
       "label": "编辑本文"
+    },
+    "sharing": {
+      "weibo": true,
+      "twitter": false,
+      "facebook": false,
+      "google": false
     }
   }
 }
