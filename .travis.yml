@@ -1,9 +1,13 @@
 language: node_js
+node_js:
+  - "node"
 addons:
   apt_packages:
     - pandoc
 before_install:
     - "npm install -g gitbook-cli"
+after_install:
+    - "gitbook install"
 script:
     - "npm run pub"
 deploy:
