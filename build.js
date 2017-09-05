@@ -38,13 +38,14 @@ str.replace(/\[.+]\((.+\.md)\)/g, (_, mdPath) => {
     let content = fs.readFileSync(mdPath, {
       encoding: 'utf8',
     });
-    // 提取出外链
-    content = content.replace(/\[(.+)]\((https?:\/\/.+)\)/g, '***$1***($2)');
+    // 提取出外链，链接用斜体
+    content = content.replace(/\[(.+)]\((https?:\/\/.+)\)/g, '*$1($2)*');
     // 修正内链
     content = content.replace(/\[(.+)]\(((?!https?:\/\/).+)\)/g, (match, p1, p2) => {
       p2 = path.resolve(mdDir, p2);
       if (p2.match(/.+.md.*/)) {
-        return `***${p1}***`;
+        // 链接用斜体
+        return `*${p1}*`;
       }
       return `[${p1}](${p2})`;
     });
