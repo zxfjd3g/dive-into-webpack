@@ -8,7 +8,7 @@ const { name } = require('./package.json');
 /********************************* 在线读者 ***********************************/
 
 // 生成网页
-execSync(`node ./node_modules/gitbook-cli/bin/gitbook.js build`);
+execSync(`gitbook build`);
 console.log('生成网页静态文件成功');
 
 // zip所有项目代码
