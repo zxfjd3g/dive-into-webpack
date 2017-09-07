@@ -2,7 +2,7 @@
   "name": "dive-into-webpack",
   "version": "1.0.0",
   "scripts": {
-    "dev:hot": "webpack-dev-server"
+    "dev:hot": "webpack-dev-server --hot"
   },
   "dependencies": {
     "react": "^15.6.1",

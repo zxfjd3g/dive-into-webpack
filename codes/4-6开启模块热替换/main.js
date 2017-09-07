@@ -6,5 +6,5 @@ import './main.css';
 render(<AppComponent/>, window.document.getElementById('app'));
 
 if (module.hot) {
-  module.hot.accept('./AppComponent');
+  module.hot.accept();
 }
