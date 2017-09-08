@@ -12,7 +12,7 @@ Npm 是在安装 Node.js 时附带的包管理器，Npm Script 则是 Npm 内置
 }
 ```
 里面的 `scripts` 字段是一个对象，每一个属性对应一段脚本，以上定义了两个任务 `dev` 和 `pub`。
-Npm Script 底层实现原理是通过调用 Shell 去运行脚本命令，比如执行 `npm run pub` 命令等同于执行命令 `node build.js`。
+Npm Script 底层实现原理是通过调用 Shell 去运行脚本命令，例如执行 `npm run pub` 命令等同于执行命令 `node build.js`。
 
 Npm Script 还有一个重要的功能是能运行安装到项目目录里的 `node_modules` 里的可执行模块，例如在通过
 ```bash

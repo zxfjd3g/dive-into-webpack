@@ -24,7 +24,7 @@ return React.createElement('h1', null, 'Hello,Webpack')
 
 #### React 与 Babel
 要在使用 Babel 的项目中接入 React 框架是很简单的，只需要加入 React 所依赖的 Presets [babel-preset-react](https://babeljs.io/docs/plugins/preset-react/)。
-接下来通过，修改前面讲过的[3.1 使用 ES6 语言](3-1使用ES6语言.md)中的项目，为其接入 React 框架。
+接下来通过，修改前面讲过的[3-1 使用 ES6 语言](3-1使用ES6语言.md)中的项目，为其接入 React 框架。
 通过
 ```bash
 # 安装 React 基础依赖
@@ -67,7 +67,7 @@ TypeScript 的不同在于：
 - 使用了 JSX 语法的文件后缀必须是 `jsx`。
 - 由于 React 不是采用 TypeScript 编写的，需要安装 `react` 和 `react-dom` 对应的 TypeScript 接口描述模块 `@types/react` 和 `@types/react-dom`。
 
-接下来通过修改前面讲过的[3.2 使用 TypeScript 语言](3-2使用TypeScript语言.md)中的项目，为其接入 React 框架。
+接下来通过修改前面讲过的[3-2 使用 TypeScript 语言](3-2使用TypeScript语言.md)中的项目，为其接入 React 框架。
 修改 TypeScript 编译器配置文件 `tsconfig.json` 增加对 JSX 语法的支持，如下：
 ```js
 {

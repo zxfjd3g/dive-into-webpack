@@ -63,7 +63,7 @@ app.on('window-all-closed', () => {
 接下来做一个简单的 Electron 应用，要求为应用启动后显示一个主窗口，在主窗口里有一个按钮，点击这个按钮后新显示一个窗口，且使用 React 开发网页。
 
 由于 Electron 应用中的每一个窗口对应一个网页，所以需要开发2个网页，分别是主窗口的 `index.html` 和新打开的窗口 `login.html`。
-也就是说项目由2个单页应用组成，这和[3.8管理多个单页应用](3-10管理多个单页应用.md) 中的项目非常相似，让我们来把它改造成一个 Electron 应用。
+也就是说项目由2个单页应用组成，这和[3-10管理多个单页应用](3-10管理多个单页应用.md) 中的项目非常相似，让我们来把它改造成一个 Electron 应用。
 
 需要改动的地方如下：
 
@@ -120,7 +120,7 @@ render(<App/>, window.document.getElementById('app'));
 ```js
 target: 'electron-renderer',
 ```
-这句配置曾在[2.7其它配置项-Target](../2配置/2-7其它配置项.md#Target)中提到，意思是指让 Webpack 构建出用于 Electron 渲染进程用的 JavaScript 代码，也就是这2个窗口需要的网页代码。
+这句配置曾在[2-7其它配置项-Target](../2配置/2-7其它配置项.md#Target)中提到，意思是指让 Webpack 构建出用于 Electron 渲染进程用的 JavaScript 代码，也就是这2个窗口需要的网页代码。
 
 以上修改都完成后重新执行 Webpack 构建，对应的网页需要的代码都输出到了项目根目录下的 `dist` 目录里。
 

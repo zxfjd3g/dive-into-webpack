@@ -66,7 +66,7 @@ function foo(one, two, three) {}
 2. [babel-preset-flow](https://babeljs.io/docs/plugins/preset-flow/) 与 Babel 集成。
 
 #### 集成 Webpack
-由于使用了 Flow 项目一般都会使用 ES6 语法，所以把 Flow 集成到使用 Webpack 构建的项目里最方便的方法是借助 Babel，下面来修改前面讲过的[3.1 使用 ES6 语言](3-1使用ES6语言.md)，为其加入 Flow 代码检查。
+由于使用了 Flow 项目一般都会使用 ES6 语法，所以把 Flow 集成到使用 Webpack 构建的项目里最方便的方法是借助 Babel，下面来修改前面讲过的[3-1 使用 ES6 语言](3-1使用ES6语言.md)，为其加入 Flow 代码检查。
 改动很少，如下：
 
 1. 安装 `npm i -D babel-preset-flow` 依赖到项目。

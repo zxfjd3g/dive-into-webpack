@@ -45,7 +45,7 @@ TypeScript 官方提供了能把 TypeScript 转换成 JavaScript 的编译器。
 2. Webpack 在寻找模块对应的文件时需要尝试 `ts` 后缀。
 
 对于问题1，社区已经出现了几个可用的 Loader，推荐使用速度更快的 [awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript-loader)。
-对于问题2，根据[2.4 Resolve 中的 extensions](../2配置/2-4Resolve.md#extensions) 我们需要修改默认的 `resolve.extensions` 配置项。
+对于问题2，根据[2-4 Resolve 中的 extensions](../2配置/2-4Resolve.md#extensions) 我们需要修改默认的 `resolve.extensions` 配置项。
 
 综上，Webpack 配置如下：
 ```js

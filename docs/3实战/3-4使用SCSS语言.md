@@ -30,7 +30,7 @@ node-sass main.scss main.css
 你就能在源码同目录下看到编译后的 `main.css` 文件。
 
 #### 接入 Webpack
-由于需要把 SCSS 源代码转换成 CSS 代码，在[1.4 使用Loader](../1入门/1-4使用Loader.md)中曾介绍过转换文件最适合的方式是使用 Loader，Webpack 官方提供了对应的 [sass-loader](https://github.com/webpack-contrib/sass-loader)。
+由于需要把 SCSS 源代码转换成 CSS 代码，在[1-4 使用Loader](../1入门/1-4使用Loader.md)中曾介绍过转换文件最适合的方式是使用 Loader，Webpack 官方提供了对应的 [sass-loader](https://github.com/webpack-contrib/sass-loader)。
 
 Webpack 接入 sass-loader 相关配置如下：
 ```js
@@ -52,7 +52,7 @@ module.exports = {
 
 1. 通过 sass-loader 把 SCSS 源码转换为 CSS 代码，再把 CSS 代码交给 css-loader 去处理。
 2. css-loader 会找出 CSS 代码中的 `@import` 和 `url()` 这样的导入语句，告诉 Webpack 依赖这些资源。同时还支持 CSS Modules、压缩 CSS 等功能。处理完后再把结果交给 style-loader 去处理。
-3. style-loader 会把 CSS 代码转换成字符串注入到 JavaScript 代码中去，通过 JavaScript 去给 DOM 增加样式。如果你想把 CSS 代码提取到一个单独的文件而不是和 JavaScript 混在一起，可以使用[1.5 使用Plugin](../1入门/1-5使用Plugin.md) 中介绍过的 ExtractTextPlugin。
+3. style-loader 会把 CSS 代码转换成字符串注入到 JavaScript 代码中去，通过 JavaScript 去给 DOM 增加样式。如果你想把 CSS 代码提取到一个单独的文件而不是和 JavaScript 混在一起，可以使用[1-5 使用Plugin](../1入门/1-5使用Plugin.md) 中介绍过的 ExtractTextPlugin。
 
 由于接入 sass-loader，项目需要安装这些新的依赖：
 ```bash
