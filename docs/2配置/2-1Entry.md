@@ -4,7 +4,8 @@
 `entry` 配置是**必填的**，没填它将导致 Webpack 报错退出。
 
 #### context
-Webpack 在寻找相对路径的文件时会根据它的 `context` 为根目录去寻找，`context` 默认为执行启动 Webpack 时所在的当前工作目录。如果你想改变 `context` 的默认配置，你在配置文件里可以这样设置它：
+Webpack 在寻找相对路径的文件时会以 `context` 为根目录，`context` 默认为执行启动 Webpack 时所在的当前工作目录。
+如果你想改变 `context` 的默认配置，你在配置文件里可以这样设置它：
 ```js
 module.exports = {
   context: path.resolve(__dirname, 'app')
@@ -13,10 +14,10 @@ module.exports = {
 注意 `context` 必须是一个绝对路径的字符串。
 除此之外还可以通过在启动 Webpack 时带上参数 `webpack --context` 来设置 `context`。
 
-之所以在这里先介绍 `context`，因为 Entry 的配置是采用相对于 `context` 的路径来描述的，`context` 会影响到 Entry 的配置。
+之所以在这里先介绍 `context`，因为 Entry 的路径和其依赖的模块的路径可能采用相对于 `context` 的路径来描述的，`context` 会影响到这些相对路径所指向的真实文件。
 
 #### Entry 类型
-可以是以下三种中的一种或者相互组合。
+可以是以下三种中的一种或者相互组合：
 
 | 类型 | 例子 | 含义 |
 | ---- | ----------------- | ------------------------------ |

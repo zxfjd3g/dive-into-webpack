@@ -4,7 +4,7 @@
 
 #### filename
 `output.filename` 配置输出文件的名称，string 类型。
-如果只有一个输出文件，你可以把它写死：
+如果只有一个输出文件，可以把它写成静态不变的：
 ```js
 filename: 'bundle.js'
 ```
@@ -12,7 +12,8 @@ filename: 'bundle.js'
 ```js
 filename: '[name].js'
 ```
-代码里的 `[name]` 代表用内置的 `name` 变量去替换掉 `[name]`，这时你可以把它看成一个字符串模块函数，每一个要输出的 Chunk 都会通过这个函数去拼接出输出的文件名称。
+代码里的 `[name]` 代表用内置的 `name` 变量去替换掉 `[name]`，这时你可以把它看成一个字符串模块函数，
+每一个要输出的 Chunk 都会通过这个函数去拼接出输出的文件名称。
 
 内置变量除了 `name` 外还包括：
 
@@ -21,11 +22,12 @@ filename: '[name].js'
 | id | Chunk 的唯一标识，从0开始 |
 | name | Chunk 的名称 |
 | hash | Chunk 的唯一标识的 hash 值 |
-| chunkhash | Chunk 内容 的 hash 值 |
+| chunkhash | Chunk 内容的 hash 值 |
 
 其中 `hash` 和 `chunkhash` 的长度是可指定的，`[hash:8]` 代表取8位 Hash 值，默认是20位。
 
-> 注意 [ExtractTextWebpackPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) 插件是使用 `contenthash` 来代表哈希值而不是 `chunkhash`，原因在于 ExtractTextWebpackPlugin 提取出来的内容是代码内容本身而不是由一组模块组成的 Chunk。
+> 注意 [ExtractTextWebpackPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) 插件是使用 `contenthash` 来代表哈希值而不是 `chunkhash`，
+> 原因在于 ExtractTextWebpackPlugin 提取出来的内容是代码内容本身而不是由一组模块组成的 Chunk。
 
 
 #### path
@@ -36,12 +38,12 @@ path: path.resolve(__dirname, 'dist_[hash]')
 
 
 #### publicPath
-在复杂的项目里可以会存在一些构建出的资源需要异步地加载，加载这些异步资源需要对应的 URL 地址。
+在复杂的项目里可能会有一些构建出的资源需要异步地加载，加载这些异步资源需要对应的 URL 地址。
 
 `output.publicPath` 配置发布到线上资源的 URL 前缀，string 类型。
 默认值是空字符串 `''`，即使用相对路径。
 
-这样说可能有点抽象，举个例子，把构建出的资源文件上传到 CDN 服务上去后有利于加速页面打开速度。配置代码如下：
+这样说可能有点抽象，举个例子，需要把构建出的资源文件上传到 CDN 服务上去，以利于加速页面打开速度。配置代码如下：
 ```js
 filename:'[name]_[chunkhash:8].js'
 publicPath: 'https://cdn.example.com/assets/'
@@ -67,7 +69,7 @@ script 标签的 crossorigin 属性可以取以下值：
 - `anonymous`(默认) 在加载此脚本资源时不会带上用户的 Cookies。
 - `use-credentials` 在加载此脚本资源时会带上用户的 Cookies。
 
-通常用设置 crossorigin 来获取异步加载脚本里的详细错误信息。
+通常用设置 crossorigin 来获取异步加载的脚本执行时的详细错误信息。
 
 
 
@@ -82,9 +84,9 @@ script 标签的 crossorigin 属性可以取以下值：
 `output.libraryTarget` 是字符串的枚举类型，支持以下配置：
 
 ##### var (默认)
-编写的库将通过 `var` 被赋值给 `library` 定义的名称。
+编写的库将通过 `var` 被赋值给通过 `library` 指定名称的变量。
 
-假如配置了 `output.library='LibraryName'`，输出和使用如下：
+假如配置了 `output.library='LibraryName'`，输出和使用代码如下：
 ```js
 // Webpack 输出的代码
 var LibraryName = lib_code;
@@ -102,7 +104,7 @@ lib_code
 ##### commonjs
 编写的库将通过 CommonJS 规范导出.
 
-假如配置了 `output.library='LibraryName'`，输出和使用如下：
+假如配置了 `output.library='LibraryName'`，输出和使用代码如下：
 ```js
 // Webpack 输出的代码
 exports['LibraryName'] = lib_code;
@@ -121,12 +123,12 @@ module.exports = lib_code;
 // 使用库的方法
 require('library-name-in-npm').doSomething();
 ```
-> CommonJS2 和 CommonJS 规范很相似，差别在于 CommonJS 只能用 `exports` 去导出而 CommonJS2 在 CommonJS 的基础上增加了 `module.exports` 的导出方式。
+> CommonJS2 和 CommonJS 规范很相似，差别在于 CommonJS 只能用 `exports` 去导出，而 CommonJS2 在 CommonJS 的基础上增加了 `module.exports` 的导出方式。
 > 
 > 在 `output.libraryTarget` 为 `commonjs2` 时，配置 `output.library` 将没有意义。
 
 ##### this
-编写的库将通过 `this` 被复制给 `library` 定义的名称，输出和使用如下：
+编写的库将通过 `this` 被赋值给通过 `library` 指定的名称，输出和使用代码如下：
 ```js
 // Webpack 输出的代码
 this['LibraryName'] = lib_code;
@@ -136,7 +138,7 @@ this.LibraryName.doSomething();
 ```
 
 ##### window
-编写的库将通过 `window` 被复制给 `library` 定义的名称，输出和使用如下：
+编写的库将通过 `window` 被赋值给通过 `library` 指定的名称，输出和使用代码如下：
 ```js
 // Webpack 输出的代码
 window['LibraryName'] = lib_code;
@@ -146,7 +148,7 @@ window.LibraryName.doSomething();
 ```
 
 ##### global
-编写的库将通过 `window` 被复制给 `library` 定义的名称，输出和使用如下：
+编写的库将通过 `window` 被赋值给通过 `library` 指定的名称，输出和使用代码如下：
 ```js
 // Webpack 输出的代码
 global['LibraryName'] = lib_code;

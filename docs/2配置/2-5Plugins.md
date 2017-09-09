@@ -19,4 +19,4 @@ module.exports = {
 ```
 使用 Plugin 的难点在于掌握 Plugin 本身提供的配置项，而不是如果在 Webpack 中接入 Plugin。
 
-几乎所有 Webpack 无法直接实现的问题都能在社区找到开源的 Plugin 去解决，你需要善于使用搜索引擎去寻找解决问题的方法。
+几乎所有 Webpack 无法直接实现的功能都能在社区找到开源的 Plugin 去解决，你需要善于使用搜索引擎去寻找解决问题的方法。

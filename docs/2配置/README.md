@@ -4,7 +4,7 @@
 配置 Webpack 的方式有两种：
 
 1. 通过一个 JavaScript 文件描述配置，例如使用 `webpack.config.js` 文件里的配置。
-2. 执行 Webpack 可执行文件时通过命令参数传入，例如 `webpack --devtool source-map`。
+2. 执行 Webpack 可执行文件时通过命令行参数传入，例如 `webpack --devtool source-map`。
 
 这两种方式可以相互搭配，例如执行 Webpack 时用`webpack --config webpack-dev.config.js` 指定配置文件，再去 `webpack-dev.config.js` 里描述部分配置。
 

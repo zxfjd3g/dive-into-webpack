@@ -3,7 +3,7 @@
 
 
 #### 配置 Loader
-`rules` 配置模块的读取和解析规则，通常用来配置 Loader。类型是一个数组，数组里每一项都描述了如何去处理部分文件。
+`rules` 配置模块的读取和解析规则，通常用来配置 Loader。其类型是一个数组，数组里每一项都描述了如何去处理部分文件。
 配置一项 `rules` 时大致通过以下方式：
 
 1. 条件匹配：通过 `test` 、 `include` 、 `exclude` 三个配置项来命中 Loader 要应用规则的文件。
@@ -19,7 +19,7 @@ module: {
       // 用 babel-loader 转换 JavaScript 文件
       // ?cacheDirectory 表示传给 babel-loader 的参数，用于缓存 babel 编译结果加快重新编译速度
       use: ['babel-loader?cacheDirectory'],
-      // 只命中src目录里的js文件，加快webpack搜索速度
+      // 只命中src目录里的js文件，加快 Webpack 搜索速度
       include: path.resolve(__dirname, 'src')
     },
     {
@@ -77,7 +77,7 @@ use: [
 `noParse` 配置项可以让 Webpack 忽略对部分没采用模块化的文件的递归解析和处理，这样做的好处是能提高构建性能。
 原因是一些库例如 jQuery 、ChartJS 它们庞大又没有采用模块化标准，让 Webpack 去解析这些文件耗时又没有意义。
 
-`noParse` 是可选配置项，类型需要是 `RegExp | [RegExp] | function`。
+`noParse` 是可选配置项，类型需要是 `RegExp | [RegExp] | function` 其中一个。
 
 例如想要忽略掉 jQuery 、ChartJS，可以使用如下代码：
 ```js
@@ -86,6 +86,8 @@ noParse: /jquery|chartjs/
 
 // 使用函数，从 Webpack 3.0.0 开始支持
 noParse: (content)=> {
+  // content 代表一个模块的文件路径
+  // 返回 true or false
   return /jquery|chartjs/.test(content);
 }
 ``` 
@@ -93,8 +95,9 @@ noParse: (content)=> {
 
 
 #### parser
-因为 Webpack 是以模块化 JavaScript 为入口，所以内置了对模块化 JavaScript 的解析功能，支持 `AMD CommonJS SystemJS ES6`。
-`parser` 属性可以更细粒度的配置哪些模块语法要解析哪些不解析，和 `noParse` 配置项的区别在于 `parser` 可以精确到语法层面而 `noParse` 只能控制哪些文件不被解析。
+因为 Webpack 是以模块化的 JavaScript 文件为入口，所以内置了对模块化 JavaScript 的解析功能，支持 `AMD CommonJS SystemJS ES6`。
+`parser` 属性可以更细粒度的配置哪些模块语法要解析哪些不解析，和 `noParse` 配置项的区别在于 `parser` 可以精确到语法层面，
+而 `noParse` 只能控制哪些文件不被解析。
 `parser` 使用如下：
 ```js
 module: {
