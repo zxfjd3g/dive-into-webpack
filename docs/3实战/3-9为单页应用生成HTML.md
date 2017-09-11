@@ -1,13 +1,14 @@
 ### 为单页应用生成 HTML
 
 #### 引入问题
-在[3-6 使用 React 框架](3-6使用React框架.md)中，是用最简单的 `Hello,Webpack` 作为例子让大家理解，这个例子里因为只输出了一个 `bundle.js` 文件，所以手写了一个 `index.html` 文件去引入这个 `bundle.js`，才能让应用在浏览器中运行起来。
+在[3-6 使用 React 框架](3-6使用React框架.md)中，是用最简单的 `Hello,Webpack` 作为例子让大家理解，
+这个例子里因为只输出了一个 `bundle.js` 文件，所以手写了一个 `index.html` 文件去引入这个 `bundle.js`，才能让应用在浏览器中运行起来。
 
 在实际项目中远比这复杂，一个页面常常有很多资源要加载。接下来举一个实际应用，要求如下：
 
-1. 项目采用 ES6 语言加 React 框架
+1. 项目采用 ES6 语言加 React 框架。
 2. 给页面加入 [Google Analytics](https://analytics.google.com/analytics/web/)，这部分代码需要内嵌进 HEAD 标签里去。
-3. 给页面加入 [Disqus](https://disqus.com) 用户评论，这部分代码可以异步加载提升首屏加载速度。
+3. 给页面加入 [Disqus](https://disqus.com) 用户评论，这部分代码需要异步加载以提升首屏加载速度。
 4. 压缩和分离 JavaScript 和 CSS 代码，提升加载速度。
 
 在开始前先来看看该应用最终发布到线上的代码：
@@ -15,9 +16,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <!--注入 Chunk app 中的 CSS-->
+  <!--注入 app 依赖的 CSS-->
   <style rel="stylesheet">h1{color:red}</style>
-  <!--注入 google_analytics 中的 JavaScript 代码-->
+  <!--内嵌 google_analytics 中的 JavaScript 代码-->
   <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -27,11 +28,11 @@ ga('create', 'UA-XXXXX-Y', 'auto');
 ga('send', 'pageview');
   </script>
   <!--异步加载 Disqus 评论-->
-  <script src="https://dive-into-webpack.disqus.com/embed.js" async=""></script>
+  <script async="" src="https://dive-into-webpack.disqus.com/embed.js"></script>
 </head>
 <body>
 <div id="app"></div>
-<!--导入 Chunk app 中的 JS-->
+<!--导入 app 依赖的 JS-->
 <script src="app_746f32b2.js"></script>
 <!--Disqus 评论容器-->
 <div id="disqus_thread"></div>
@@ -64,7 +65,7 @@ const { WebPlugin } = require('web-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './main.js'// Chunk app 的 JavaScript 执行入口文件
+    app: './main.js'// app 的 JavaScript 执行入口文件
   },
   output: {
     filename: '[name]_[chunkhash:8].js',// 给输出的文件名称加上 Hash 值
@@ -163,7 +164,8 @@ new WebPlugin({
 以 `<link rel="stylesheet" href="app?_inline">` 为例，按照正常引入 CSS 文件一样的语法来引入 Webpack 生产的代码。
 `href` 属性中的 `app?_inline` 可以分为两部分，前面的 `app` 表示 CSS 代码来自名叫 `app` 的 Chunk 中，后面的 `_inline` 表示这些代码需要被内嵌到这个标签所在的位置。
 
-同样的 `<script src="./google_analytics.js?_inline"></script>` 表示 JavaScript 代码来自相对于当前模版文件 `template.html` 的本地文件 `./google_analytics.js`，文件中的 JavaScript 代码也需要被内嵌到这个标签所在的位置。
+同样的 `<script src="./google_analytics.js?_inline"></script>` 表示 JavaScript 代码来自相对于当前模版文件 `template.html` 的本地文件 `./google_analytics.js`，
+而且文件中的 JavaScript 代码也需要被内嵌到这个标签所在的位置。
 
 也就是说资源链接 URL 字符串里问号前面的部分表示资源内容来自哪里，后面的 querystring 表示这些资源注入的方式。
 
@@ -173,7 +175,7 @@ new WebPlugin({
 - `_dev` 只有在开发环境下才引入该资源
 - `_ie` 只有IE浏览器才需要引入的资源，通过 `[if IE]>resource<![endif]` 注释实现
 
-这些属性之间可以搭配使用，互不冲突。例如 `app?_inline&_dist` 表示只在生产环境下才内嵌该资源到 HTML 里去。
+这些属性之间可以搭配使用，互不冲突。例如 `app?_inline&_dist` 表示只在生产环境下才引入该资源，并且需要内嵌到 HTML 里去。
 
 `WebPlugin` 插件还支持一些其它更高级的用法，详情可以访问该[项目主页](https://github.com/gwuhaolin/web-webpack-plugin)阅读文档。
 

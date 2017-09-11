@@ -1,7 +1,7 @@
 ### 使用 React 框架
 
 #### React 语法特征
-使用了 React 项目的代码特征是有 JSX 和 Class 语法，例如：
+使用了 React 项目的代码特征有 JSX 和 Class 语法，例如：
 ```jsx
 class Button extends Component {
   render() {
@@ -24,8 +24,9 @@ return React.createElement('h1', null, 'Hello,Webpack')
 
 #### React 与 Babel
 要在使用 Babel 的项目中接入 React 框架是很简单的，只需要加入 React 所依赖的 Presets [babel-preset-react](https://babeljs.io/docs/plugins/preset-react/)。
-接下来通过，修改前面讲过的[3-1 使用 ES6 语言](3-1使用ES6语言.md)中的项目，为其接入 React 框架。
-通过
+接下来通过修改前面讲过的[3-1 使用 ES6 语言](3-1使用ES6语言.md)中的项目，为其接入 React 框架。
+
+通过以下命令：
 ```bash
 # 安装 React 基础依赖
 npm i -D react react-dom
@@ -40,7 +41,8 @@ npm i -D babel-preset-react
 ],
 ```
 就完成了一切准备工作。
-在修改 `main.js` 文件如下：
+
+再修改 `main.js` 文件如下：
 ```jsx
 import * as React from 'react';
 import { Component } from 'react';
@@ -62,12 +64,12 @@ render(<Button/>, window.document.getElementById('app'));
 
 #### React 与 TypeScript
 TypeScript 相比于 Babel 的优点在于它原生支持 JSX 语法，你不需要重新安装新的依赖，只需修改一行配置。
-TypeScript 的不同在于：
+但 TypeScript 的不同在于：
 
 - 使用了 JSX 语法的文件后缀必须是 `jsx`。
-- 由于 React 不是采用 TypeScript 编写的，需要安装 `react` 和 `react-dom` 对应的 TypeScript 接口描述模块 `@types/react` 和 `@types/react-dom`。
+- 由于 React 不是采用 TypeScript 编写的，需要安装 `react` 和 `react-dom` 对应的 TypeScript 接口描述模块 `@types/react` 和 `@types/react-dom` 后才能通过编译。
 
-接下来通过修改前面讲过的[3-2 使用 TypeScript 语言](3-2使用TypeScript语言.md)中的项目，为其接入 React 框架。
+接下来通过修改[3-2 使用 TypeScript 语言](3-2使用TypeScript语言.md)中讲过的的项目，为其接入 React 框架。
 修改 TypeScript 编译器配置文件 `tsconfig.json` 增加对 JSX 语法的支持，如下：
 ```js
 {
@@ -78,7 +80,8 @@ TypeScript 的不同在于：
 }
 ```
 由于 `main.js` 文件中存在 JSX 语法，再把 `main.js` 文件重命名为 `main.jsx`，同时修改文件内容为在上面 *React 与 Babel* 里所采用的 React 代码。
-同时为了让 Webpack 对项目里的 ts 与 tsx 原文件都采用 `awesome-typescript-loader` 去转换，需要注意的是 Webpack Loader 配置的 `test` 选项需要匹配到 tsx 类型的文件，并且 `extensions` 中也要加上 `.tsx`，配置如下：
+同时为了让 Webpack 对项目里的 ts 与 tsx 原文件都采用 `awesome-typescript-loader` 去转换，
+需要注意的是 Webpack Loader 配置的 `test` 选项需要匹配到 tsx 类型的文件，并且 `extensions` 中也要加上 `.tsx`，配置如下：
 ```js
 const path = require('path');
 

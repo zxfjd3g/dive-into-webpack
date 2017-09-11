@@ -33,7 +33,7 @@ export class AppComponent {
 }
 ```
 
-光有组件还不够，还需要实例化 `AppComponent` 视图组件，并把它渲染到 DOM 中去。Angular2 规定可运行的应用至少有一个 NgModule 也就是需要一个 根 NgModule。
+光有组件还不够，还需要实例化 `AppComponent` 视图组件，并把它渲染到 DOM 中去。Angular2 规定可运行的应用至少有一个 NgModule 也就是需要一个根 NgModule。
 这个根 NgModule 描述了如何启动应用，代码如下：
 ```typescript
 // 让 Angular2 正常运行需要的 polyfill
@@ -62,7 +62,8 @@ class AppModule {
 platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 
-Angular2 应用启动后会去解析当前 DOM 树找出名叫 `app-root` 的 HTML 标签，并以这个标签为 Angular2 应用的运行容器，所以还需要改造 `index.html` 加入 `app-root` HTML 标签，代码如下：
+Angular2 应用启动后会去解析当前 DOM 树找出名叫 `app-root` 的 HTML 标签，并以这个标签为 Angular2 应用的运行容器，
+所以还需要改造 `index.html` 加入 `app-root` HTML 标签，代码如下：
 ```html
 <html>
 <head>

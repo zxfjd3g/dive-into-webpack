@@ -2,7 +2,7 @@
 
 #### 认识 SCSS
 [SCSS](http://sass-lang.com) 可以让你用程序员的方式写 CSS。
-它是一种 CSS 预处理器，语法和 CSS 相似，但加入了变量、逻辑、等编程元素。
+它是一种 CSS 预处理器，语法和 CSS 相似，但加入了变量、逻辑、等编程元素，代码类似这样：
 ```scss
 $blue: #1875e7;　
 div {
@@ -41,7 +41,7 @@ module.exports = {
       {
         // 增加对 SCSS 文件的支持
         test: /\.scss/,
-        // SCSS 文件的处理顺序为 sass-loader > css-loader > style-loader
+        // SCSS 文件的处理顺序为先 sass-loader 再 css-loader 再 style-loader
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ]

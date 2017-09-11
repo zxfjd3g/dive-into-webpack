@@ -2,7 +2,7 @@
 
 #### 认识 Flow
 [Flow](https://flow.org) 是一个 Facebook 开源的 JavaScript 静态类型检测器，它是 JavaScript 语言的超集。
-你所需要做的就是在需要的地方加上类型检查，例如在两个由不同人开发的模块对接的接口出加上静态类型检查能在编译阶段就指出部分模块使用不当的问题。
+你所需要做的就是在需要的地方加上类型检查，例如在两个由不同人开发的模块对接的接口出加上静态类型检查，能在编译阶段就指出部分模块使用不当的问题。
 同时 Flow 也能通过类型推断检查出 JavaScript 代码中潜在的 Bug。
 
 Flow 使用效果如下：
@@ -36,6 +36,7 @@ npm i -D flow-bin
 }
 ```
 再通过 `npm run flow` 去调用 Flow 执行代码检查。
+
 除此之外你还可以通过
 ```bash
 npm i -g flow-bin
@@ -54,7 +55,7 @@ Found 1 error
 采用了 Flow 静态类型语法的 JavaScript 是无法直接在目前已有的 JavaScript 引擎中运行的，要让代码可以运行需要把这些静态类型语法去掉。
 例如：
 ```js
-// 源代码
+// 采用 Flow 的源代码
 function foo(one: any, two: number, three?): string {}
 
 // 去掉静态类型语法后输出代码
