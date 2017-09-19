@@ -1,10 +1,12 @@
 const path = require('path');
-const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 
 module.exports = {
   // JS 执行入口文件
-  entry: './main.js',
+  entry: {
+    main: './main.js',
+    hmr: 'webpack/hot/only-dev-server'
+  },
   output: {
     // 把所有依赖的模块合并输出到一个 bundle.js 文件
     filename: 'bundle.js',
@@ -26,8 +28,8 @@ module.exports = {
     ]
   },
   plugins: [
-    // new HotModuleReplacementPlugin(),
-    // new NamedModulesPlugin(),
+    // 现实出被替换模块的名称
+    new NamedModulesPlugin(),
   ],
   // 输出 source-map 方便直接调试 ES6 源码
   devtool: 'source-map',
