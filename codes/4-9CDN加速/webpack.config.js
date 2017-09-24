@@ -6,11 +6,15 @@ const {WebPlugin} = require('web-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './main.js'// Chunk app 的 JS 执行入口文件
+    // Chunk app 的 JS 执行入口文件
+    app: './main.js'
   },
   output: {
-    filename: '[name]_[chunkhash:8].js',// 给输出的文件名称加上 hash 值
+    // 给输出的 JavaScript 文件名称加上 Hash 值
+    filename: '[name]_[chunkhash:8].js',
     path: path.resolve(__dirname, './dist'),
+    // 指定存放 JavaScript 文件的线上目录
+    publicPath: '//js.cdn.com/id/',
   },
   module: {
     rules: [
@@ -21,27 +25,37 @@ module.exports = {
         exclude: path.resolve(__dirname, 'node_modules'),
       },
       {
-        test: /\.css/,// 增加对 CSS 文件的支持
+        // 增加对 CSS 文件的支持
+        test: /\.css/,
         // 提取出 Chunk 中的 CSS 代码到单独的文件中
         use: ExtractTextPlugin.extract({
-          use: ['css-loader?minimize'] // 压缩 CSS 代码
+          // 压缩 CSS 代码
+          use: ['css-loader?minimize'],
+          // 指定存放 CSS 中导入的资源（例如图片）的线上目录
+          publicPath: '//img.cdn.com/id/'
         }),
       },
       {
-        test: /\.png/,// 增加对 CSS 文件的支持
-        // 提取出 Chunk 中的 CSS 代码到单独的文件中
+        // 增加对 PNG 文件的支持
+        test: /\.png/,
+        // 给输出的 PNG 文件名称加上 Hash 值
         use: ['file-loader?name=[name]_[hash:8].[ext]'],
       },
     ]
   },
   plugins: [
-    // 使用本文的主角 WebPlugin，一个 WebPlugin 对应一个 HTML 文件
+    // 使用 WebPlugin 自动生成 HTML
     new WebPlugin({
-      template: './template.html', // HTML 模版文件所在的文件路径
-      filename: 'index.html' // 输出的 HTML 的文件名称
+      // HTML 模版文件所在的文件路径
+      template: './template.html',
+      // 输出的 HTML 的文件名称
+      filename: 'index.html',
+      // 指定存放 CSS 文件的线上目录
+      stylePublicPath: '//css.cdn.com/id/',
     }),
     new ExtractTextPlugin({
-      filename: `[name]_[contenthash:8].css`,// 给输出的 CSS 文件名称加上 hash 值
+      // 给输出的 CSS 文件名称加上 Hash 值
+      filename: `[name]_[contenthash:8].css`,
     }),
     new DefinePlugin({
       // 定义 NODE_ENV 环境变量为 production 去除 react 代码中的开发时才需要的部分
@@ -51,10 +65,6 @@ module.exports = {
     }),
     // 压缩输出的 JS 代码
     new UglifyJsPlugin({
-      // 最紧凑的输出
-      beautify: false,
-      // 删除所有的注释
-      comments: false,
       compress: {
         // 在UglifyJs删除没有用到的代码时不输出警告
         warnings: false,
@@ -64,6 +74,12 @@ module.exports = {
         collapse_vars: true,
         // 提取出出现多次但是没有定义成变量去引用的静态值
         reduce_vars: true,
+      },
+      output: {
+        // 最紧凑的输出
+        beautify: false,
+        // 删除所有的注释
+        comments: false,
       }
     }),
   ],
