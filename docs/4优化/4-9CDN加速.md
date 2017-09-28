@@ -165,6 +165,6 @@ module.exports = {
 - `css-loader.publicPath` 中设置被 CSS 导入的资源的的地址。
 - `WebPlugin.stylePublicPath` 中设置 CSS 文件的地址。
 
-设置好 `publicPath` 后，`WebPlugin` 在生成 HTML 文件和 `css-loader` 转换 CSS 代码时，会考虑到配置中的 `publicPath`，对对应的线上地址替换原来的相对地址。
+设置好 `publicPath` 后，`WebPlugin` 在生成 HTML 文件和 `css-loader` 转换 CSS 代码时，会考虑到配置中的 `publicPath`，用对应的线上地址替换原来的相对地址。
 
 > 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/4-9CDN加速.zip)

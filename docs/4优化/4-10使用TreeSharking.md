@@ -4,7 +4,7 @@
 Tree Sharking 可以用来剔除 JavaScript 中用不上的死代码。它依赖静态的 ES6 模块化语法，例如通过 `import` 和 `export` 导入导出。
 Tree Sharking 最先在 Rollup 中出现，Webpack 在 2.0 版本中将其引入。
 
-为了更直观的理解它，来看一个具体的例子。加入有一个文件 `util.js` 里存放很多工具函数和常量，在 `main.js` 中会导入和使用 `util.js`，代码如下：
+为了更直观的理解它，来看一个具体的例子。假如有一个文件 `util.js` 里存放了很多工具函数和常量，在 `main.js` 中会导入和使用 `util.js`，代码如下：
 
 `util.js` 源码：
 ```js
@@ -50,4 +50,44 @@ export function funcA() {
 ```
 其中 `"modules": false` 的含义是关闭 Babel 的模块转换功能，保留原本的 ES6 模块化语法。
 
-配置好 Babel 后，重新运行 Webpack，在启动 Webpack 时带上 `--display-used-exports` 参数
+配置好 Babel 后，重新运行 Webpack，在启动 Webpack 时带上 `--display-used-exports` 参数，这时你会发现在控制台中输出了如下的日志：
+```
+> webpack --display-used-exports
+bundle.js  3.5 kB       0  [emitted]  main
+   [0] ./main.js 41 bytes {0} [built]
+   [1] ./util.js 511 bytes {0} [built]
+       [only some exports used: funcA]
+```
+其中 `[only some exports used: funcA]` 提示了 `util.js` 只导出了用到的 `funcA`，说明 Webpack 确实正确的分析出了如何剔除死代码。
+
+但当你打开 Webpack 输出的 `bundle.js` 文件看下时，你会发现用不上的代码还在里面，如下：
+```js
+/* harmony export (immutable) */
+__webpack_exports__["a"] = funcA;
+
+/* unused harmony export funB */
+
+function funcA() {
+  console.log('funcA');
+}
+
+function funB() {
+  console.log('funcB');
+}
+```
+Webpack 只是指出了哪些函数用上了哪些没用上，要剔除用不上的代码还得经过 UglifyJS 去处理一遍。
+要接入 UglifyJS 也很简单，即可以通过[4-8压缩代码](4-8压缩代码.md)中介绍的加入 UglifyJSPlugin 去实现，
+也可以简单的通过在启动 Webpack 时带上 `--optimize-minimize` 参数，为了快速验证 Tree Sharking 我们采用较简单的后者来实验下。
+
+通过 `webpack --display-used-exports --optimize-minimize` 重启 Webpack 后，打开新输出的 `bundle.js`，内容如下：
+```js
+function r() {
+  console.log("funcA")
+}
+
+t.a = r
+```
+可以看出 Tree Sharking 确实做到了，用不上的代码都被剔除了。
+
+> 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/4-10使用TreeSharking.zip)
+
