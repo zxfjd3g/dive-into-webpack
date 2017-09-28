@@ -54,8 +54,8 @@
   - [4-7 区分环境](4优化/4-7区分环境.md)
   - [4-8 压缩代码](4优化/4-8压缩代码.md)
   - [4-9 CDN 加速](4优化/4-9CDN加速.md)
-  - [使用 Tree Sharking](4优化/4-10使用TreeSharking.md)
-  - [提取公共依赖模块]
+  - [4-10 使用 Tree Sharking](4优化/4-10使用TreeSharking.md)
+  - [4-11 提取公共代码](4优化/4-11提取公共代码.md)
   - [webpack3 Scope Hoisting]
   - [利用缓存减少重复网络加载]
   - [图片压缩与合并]
