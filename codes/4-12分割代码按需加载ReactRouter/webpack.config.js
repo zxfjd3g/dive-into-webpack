@@ -6,9 +6,10 @@ module.exports = {
     main: './main.js',
   },
   output: {
+    // 为从 entry 中配置生成的 Chunk 配置输出文件的名称
     filename: '[name].js',
-    // 输出文件都放到 dist 目录下
-    path: path.resolve(__dirname, './dist'),
+    // 为动态加载的 Chunk 配置输出文件的名称
+    chunkFilename: '[name].js',
   },
   module: {
     rules: [
