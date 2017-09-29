@@ -1,9 +1,9 @@
 ### 使用 DevServer
 前面的几节只是让 Webpack 正常运行起来了，但在实际开发中你可能会需要：
 
-（1）提供 HTTP 服务而不是使用本地文件预览。
-（2）监听文件的变化并自动刷新网页，做到实时预览。
-（3）支持 Source Map ，以方便调试。
+（1）提供 HTTP 服务而不是使用本地文件预览；
+（2）监听文件的变化并自动刷新网页，做到实时预览；
+（3）支持 Source Map，以方便调试。
 
 对于这些， Webpack 都为你考虑好了。Webpack 原生支持上述第2、3点内容，再结合官方提供的开发工具 [DevServer](https://webpack.js.org/configuration/dev-server/) 也可以很方便地做到第1点。
 DevServer 会启动一个 HTTP 服务器用于服务网页请求，同时会帮助启动 Webpack ，并接收 Webpack 发出的文件更变信号，通过 WebSocket 协议自动刷新网页做到实时预览。
