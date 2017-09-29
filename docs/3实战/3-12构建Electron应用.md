@@ -55,7 +55,7 @@ app.on('window-all-closed', () => {
 启动的窗口其实是一个网页，启动时会去加载在 `loadURL` 中传入的网页地址。
 每个窗口都是一个单独的网页进程，窗口之间的通信需要借助主进程传递消息。
 
-![Electron 应用架构图](img/electron-arch.png)
+![Electron 应用架构图](img/3-12electron-arch.png)
 
 总体来说开发 Electron 应用和开发 Web 应用很相似，区别在于 Electron 的运行环境同时内置了浏览器和 Node.js 的 API，在开发网页时除了可以使用浏览器提供的 API 外，还可以使用 Node.js 提供的 API。
 
@@ -131,7 +131,7 @@ npm i -D electron
 ```
 安装成功后在项目目录下执行 `electron .` 你就能成功看到启动的桌面应用了，效果如图：
 
-![Electron 应用运行效果图](img/electron-app.png)
+![Electron 应用运行效果图](img/3-12electron-app.png)
 
 > 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3-12构建Electron应用.zip)
 
