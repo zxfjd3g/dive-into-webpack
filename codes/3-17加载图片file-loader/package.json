@@ -1,0 +1,15 @@
+{
+  "name": "dive-into-webpack",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "0.11.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.4.0"
+  }
+}
