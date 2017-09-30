@@ -1,0 +1,13 @@
+{
+  "name": "dive-into-webpack",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "svg-inline-loader": "^0.8.0",
+    "web-webpack-plugin": "^1.10.0",
+    "webpack": "^3.4.0"
+  }
+}
