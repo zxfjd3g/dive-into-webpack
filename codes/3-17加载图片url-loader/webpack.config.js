@@ -28,7 +28,7 @@ module.exports = {
           options: {
             // 30Kb 以下的文件采用 url-loader
             limit: 1024 * 30,
-            // 否则采用 file-loader
+            // 否则采用 file-loader，默认值就是 file-loader
             fallback: 'file-loader',
           }
         }]
