@@ -35,7 +35,6 @@ node-sass main.scss main.css
 Webpack 接入 sass-loader 相关配置如下：
 ```js
 module.exports = {
-  // ...
   module: {
     rules: [
       {

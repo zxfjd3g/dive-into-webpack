@@ -20,7 +20,6 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 
 module.exports = {
-  // ...
   plugins: [
     // 使用 ParallelUglifyPlugin 并行压缩输出的 JS 代码
     new ParallelUglifyPlugin({
@@ -44,7 +43,6 @@ module.exports = {
         }
       },
     }),
-    // ...
   ],
 };
 ```

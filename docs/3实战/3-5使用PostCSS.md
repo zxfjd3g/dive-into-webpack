@@ -60,7 +60,6 @@ module.exports = {
 接入 PostCSS 相关的 Webpack 配置如下：
 ```js
 module.exports = {
-  // ...
   module: {
     rules: [
       {

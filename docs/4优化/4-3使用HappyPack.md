@@ -17,7 +17,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HappyPack = require('happypack');
 
 module.exports = {
-  // ...
   module: {
     rules: [
       {
@@ -71,7 +70,6 @@ module.exports = {
   const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
 
   module.exports = {
-    // ...
     plugins: [
       new HappyPack({
         // 用唯一的标识符 id 来代表当前的 HappyPack 是用来处理一类特定的文件
