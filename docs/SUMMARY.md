@@ -62,6 +62,7 @@
   - [4-13 使用 Prepack](4优化/4-13使用Prepack.md)
   - [4-14 开启 Scope Hoisting](4优化/4-14开启ScopeHoisting.md)
   - [4-15 输出分析](4优化/4-15输出分析.md)
+  - [4-16 优化总结](4优化/4-16优化总结.md)
   
 - [第5章 原理](5原理/README.md)
 
