@@ -38,7 +38,9 @@ Prepack 的工作原理和流程大致如下：
 
 - 不能识别 DOM API 和 Node API，如果源码中有调用依赖运行环境的 API 就会导致 Prepack 报错；
 - 存在优化后的代码性能反而更低的情况。
+- 存在优化后的代码文件尺寸大大增加的情况。
 
+总之，现在把 Prepack 用于线上环境还过早了点。
 
 #### 接入 Webpack
 Prepack 需要在 Webpack 输出最终的代码之前，对这些代码进行优化，就像 UglifyJS 那样。
@@ -54,5 +56,7 @@ module.exports = {
   ]
 };
 ```
+
+重新执行构建你就会看到输出的被 Prepack 优化后的代码。
 
 > 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/4-13使用Prepack.zip)

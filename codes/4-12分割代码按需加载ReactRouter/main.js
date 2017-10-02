@@ -14,7 +14,7 @@ function getAsyncComponent(load) {
     componentDidMount() {
       // 在高阶组件 DidMount 时才去执行网络加载步骤
       load().then(({default: component}) => {
-        // 代码加载成功，获取到了代码导出的值，调用 setState 用异步组件重新渲染
+        // 代码加载成功，获取到了代码导出的值，调用 setState 通知高阶组件重新渲染子组件
         this.setState({
           component,
         })
