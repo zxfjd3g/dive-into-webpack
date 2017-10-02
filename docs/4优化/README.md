@@ -32,7 +32,7 @@
   
 2. **提升流畅度**，也就是提升代码性能。
   - [4-13 使用 Prepack](4-13使用Prepack.md)
-  - [Scope Hoisting]
+  - [4-14 开启 Scope Hoisting](4-14开启ScopeHoisting.md)
 
 
 
