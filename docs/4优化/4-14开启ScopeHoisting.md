@@ -28,7 +28,7 @@ console.log(str);
 ]
 ```
 
-再开启 Scope Hoisting 后，同样的源码输出的部分代码如下：
+在开启 Scope Hoisting 后，同样的源码输出的部分代码如下：
 ```js
 [
   (function (module, __webpack_exports__, __webpack_require__) {
