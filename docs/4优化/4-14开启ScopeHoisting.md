@@ -42,12 +42,12 @@ console.log(str);
 这样做的好处是：
 
 - 代码体积更小，因为函数申明语句会产生大量代码；
-- 代码运行时因为创建的函数作用域更少了，内存开销也随之变小。
+- 代码在运行时因为创建的函数作用域更少了，内存开销也随之变小。
 
 Scope Hoisting 的实现原理其实很简单：分析出模块之间的依赖关系，尽可能的把打散的模块合并到一个函数中去，但前提是不能造成代码冗余。
 因此只有那些被引用了一次的模块才能被合并。
 
-由于 Scope Hoisting 需要分析出模块之间的依赖关系，因此源码必须采用 ES6 模块化语句，不然它无法生效。
+由于 Scope Hoisting 需要分析出模块之间的依赖关系，因此源码必须采用 ES6 模块化语句，不然它将无法生效。
 原因和[4-10 使用 TreeSharking](4-10使用TreeSharking.md) 中介绍的类似。
 
 #### 使用 Scope Hoisting
@@ -74,6 +74,13 @@ module.exports = {
   },
 };
 ```
+对于采用了非 ES6 模块化语法的代码，Webpack 会降级处理不使用 Scope Hoisting 优化，为了知道 Webpack 对哪些代码做了降级处理，
+你可以在启动 Webpack 时带上 `--display-optimization-bailout` 参数，这样在输出日志中就会包含类似如下的日志：
+```
+[0] ./main.js + 1 modules 80 bytes {0} [built]
+    ModuleConcatenation bailout: Module is not an ECMAScript module
+```
+其中的 `ModuleConcatenation bailout` 告诉了你哪个文件因为什么原因导致了降级处理。
 
 也就是说要开启 Scope Hoisting 并发挥最大作用的配置如下：
 ```js
