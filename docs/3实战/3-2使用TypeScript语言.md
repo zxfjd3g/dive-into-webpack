@@ -29,7 +29,7 @@ TypeScript 官方提供了能把 TypeScript 转换成 JavaScript 的编译器。
   "compilerOptions": {
     "module": "commonjs", // 编译出的代码采用的模块规范
     "target": "es5", // 编译出的代码采用 ES 的哪个版本
-    "sourceMap": true // 输出 SourceMap 方便调试
+    "sourceMap": true // 输出 Source Map 方便调试
   },
   "exclude": [ // 不编译这些目录里的文件
     "node_modules"
@@ -71,7 +71,7 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map',// 输出 SourceMap 方便在浏览器里调试 TypeScript 代码
+  devtool: 'source-map',// 输出 Source Map 方便在浏览器里调试 TypeScript 代码
 };
 ```
 
@@ -79,7 +79,7 @@ module.exports = {
 ```bash
 npm i -D typescript awesome-typescript-loader
 ```
-安装成功后重新执行构建，你将会在 `dist` 目录看到输出的 JavaScript 文件 `bundle.js` 和对应的 SourceMap 文件 `bundle.js.map`。
+安装成功后重新执行构建，你将会在 `dist` 目录看到输出的 JavaScript 文件 `bundle.js` 和对应的 Source Map 文件 `bundle.js.map`。
 在浏览器里打开 `index.html` 页面后，来开发工具里可以看到和调试用 TypeScript 编写的源码。
 
 > 本实例[提供项目完整代码](http://webpack.wuhaolin.cn/3-2使用TypeScript语言.zip)
