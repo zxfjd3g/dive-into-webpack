@@ -50,7 +50,8 @@ export function funcA() {
 ```
 其中 `"modules": false` 的含义是关闭 Babel 的模块转换功能，保留原本的 ES6 模块化语法。
 
-配置好 Babel 后，重新运行 Webpack，在启动 Webpack 时带上 `--display-used-exports` 参数，这时你会发现在控制台中输出了如下的日志：
+配置好 Babel 后，重新运行 Webpack，在启动 Webpack 时带上 `--display-used-exports` 参数，以方便追踪 Tree Sharking 的工作，
+这时你会发现在控制台中输出了如下的日志：
 ```
 > webpack --display-used-exports
 bundle.js  3.5 kB       0  [emitted]  main
@@ -76,7 +77,7 @@ function funB() {
 }
 ```
 Webpack 只是指出了哪些函数用上了哪些没用上，要剔除用不上的代码还得经过 UglifyJS 去处理一遍。
-要接入 UglifyJS 也很简单，即可以通过[4-8压缩代码](4-8压缩代码.md)中介绍的加入 UglifyJSPlugin 去实现，
+要接入 UglifyJS 也很简单，不仅可以通过[4-8压缩代码](4-8压缩代码.md)中介绍的加入 UglifyJSPlugin 去实现，
 也可以简单的通过在启动 Webpack 时带上 `--optimize-minimize` 参数，为了快速验证 Tree Sharking 我们采用较简单的后者来实验下。
 
 通过 `webpack --display-used-exports --optimize-minimize` 重启 Webpack 后，打开新输出的 `bundle.js`，内容如下：
@@ -90,8 +91,8 @@ t.a = r
 可以看出 Tree Sharking 确实做到了，用不上的代码都被剔除了。
 
 
-当你的项目使用了大量第三方库时，你会发现 Tree Sharking 似乎不生效了，原因是大部分 Npm 🀄️中的代码都是采用的 CommonJS 语法，
-这导致 Tree Sharking 无法生效。
+当你的项目使用了大量第三方库时，你会发现 Tree Sharking 似乎不生效了，原因是大部分 Npm 中的代码都是采用的 CommonJS 语法，
+这导致 Tree Sharking 无法正常工作而降级处理。
 但幸运的时有些库考虑到了这点，这些库在发布到 Npm 上时会同时提供两份代码，一份采用 CommonJS 模块化语法，一份采用 ES6 模块化语法。
 并且在 `package.json` 文件中分别指出这两份代码的入口。
 
@@ -122,7 +123,7 @@ module.exports = {
 };
 ```
 以上配置的含义是优先使用 `jsnext:main` 作为入口，如果不存在 `jsnext:main` 就采用 `browser` 或者 `main` 作为入口。
-虽然并不是每个 Npm 中的第三方模块都会提供 ES6 模块化语法的代码，但对于提供了的不能放过，能优化就优化。
+虽然并不是每个 Npm 中的第三方模块都会提供 ES6 模块化语法的代码，但对于提供了的不能放过，能优化的就优化。
 
 目前越来越多的 Npm 中的第三方模块考虑到了 Tree Sharking，并对其提供了支持。
 采用 `jsnext:main` 作为 ES6 模块化代码的入口是社区的一个约定，假如将来你要发布一个库到 Npm 时，希望你能支持 Tree Sharking，
