@@ -6,7 +6,7 @@
 
 由于压缩 JavaScript 代码需要先把代码解析成用 Object 抽象表示的 AST 语法树，再去应用各种规则分析和处理 AST，导致这个过程计算量巨大，耗时非常多。
 
-为什么不把在[4-4 使用 ParallelUglifyPlugin](4-4使用ParallelUglifyPlugin.md)中介绍过的多进程并行处理的思想也引入到代码压缩中呢？
+为什么不把在[4-3 使用 HappyPack](4-3使用HappyPack.md)中介绍过的多进程并行处理的思想也引入到代码压缩中呢？
 
 [ParallelUglifyPlugin](https://github.com/gdborton/webpack-parallel-uglify-plugin) 就做了这个事情。
 当 Webpack 有多个 JavaScript 文件需要输出和压缩时，原本会使用 UglifyJS 去一个个挨着压缩再输出，
@@ -62,6 +62,8 @@ module.exports = {
 > [UglifyES](https://github.com/mishoo/UglifyJS2/tree/harmony) 是 UglifyJS 的变种，专门用于压缩 ES6 代码，它们两都出自于同一个项目，并且它们两不能同时使用。
 > 
 > UglifyES 一般用于给比较新的 JavaScript 运行环境压缩代码，例如用于 ReactNative 的代码运行在兼容性较好的 JavaScriptCore 引擎中，为了得到更好的性能和尺寸，采用 UglifyES 压缩效果会更好。
+>
+> ParallelUglifyPlugin 同时内置了 UglifyJS 和 UglifyES，也就是说 ParallelUglifyPlugin 支持并行压缩 ES6 代码。
 
 接入 ParallelUglifyPlugin 后，项目需要安装新的依赖：
 ```bash
