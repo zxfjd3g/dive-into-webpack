@@ -8,5 +8,6 @@ module.exports = {
     filename: '[name].js',
     // 为动态加载的 Chunk 配置输出文件的名称
     chunkFilename: '[name].js',
+    path: path.resolve(__dirname, './dist'),
   }
 };
