@@ -16,7 +16,7 @@
 
 
 #### 接入 Webpack
-Webpack 已经引入了动态链接库的思想，需要通过2个内置的插件接入，它们分别是：
+Webpack 已经内置了对动态链接库的支持，需要通过2个内置的插件接入，它们分别是：
 
 - DllPlugin 插件：用于打包出一个个单独的动态链接库文件。
 - DllReferencePlugin 插件：用于在主要配置文件中去引入 DllPlugin 插件打包出的动态链接库文。
@@ -83,10 +83,10 @@ var _dll_react = (function(modules) {
   }
 }
 ```
-可见 `manifest.json` 文件清楚的描述了与其对应的 `dll.js` 文件中包含了哪些模块，以及每个模块的路径和 ID。
+可见 `manifest.json` 文件清楚地描述了与其对应的 `dll.js` 文件中包含了哪些模块，以及每个模块的路径和 ID。
 
 `main.js` 文件是编译出来的执行入口文件，当遇到其依赖的模块在 `dll.js` 文件中时，会直接通过 `dll.js` 文件暴露出的全局变量去获取打包在 `dll.js` 文件的模块。
-所有在 `index.html` 文件中需要把依赖的两个 `dll.js` 文件给加载进去，`index.html` 内容如下：
+所以在 `index.html` 文件中需要把依赖的两个 `dll.js` 文件给加载进去，`index.html` 内容如下：
 ```html
 <html>
 <head>
@@ -166,7 +166,7 @@ const DllReferencePlugin = require('webpack/lib/DllReferencePlugin');
 
 module.exports = {
   entry: {
-    // 定义 入口 Chunk
+    // 定义入口 Chunk
     main: './main.js'
   },
   output: {
